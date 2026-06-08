@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+  <sp_page action="INSERT_OR_UPDATE">
+    <sys_id>dd1f327e9d1e470cbcc3c197e2f088aa</sys_id>
+    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+    <sys_update_name>sp_page_dd1f327e9d1e470cbcc3c197e2f088aa</sys_update_name>
+    <category>custom</category>
+    <css/>
+    <draft>false</draft>
+    <dynamic_title_structure/>
+    <human_readable_url_structure/>
+    <id>aiva_submit</id>
+    <internal>false</internal>
+    <omit_watcher>false</omit_watcher>
+    <public>false</public>
+    <roles/>
+    <seo_script/>
+    <short_description/>
+    <title>Submit AIVA Request</title>
+    <use_seo_script>false</use_seo_script>
+  </sp_page>
+</record_update>

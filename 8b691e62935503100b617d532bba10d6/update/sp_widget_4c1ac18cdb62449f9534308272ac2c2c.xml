@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+  <sp_widget action="INSERT_OR_UPDATE">
+    <sys_id>4c1ac18cdb62449f9534308272ac2c2c</sys_id>
+    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+    <sys_update_name>sp_widget_4c1ac18cdb62449f9534308272ac2c2c</sys_update_name>
+    <category>custom</category>
+    <client_script><![CDATA[api.controller = function() {
+  var c = this;
+
+  c.allColumns = [
+    { field: 'number', label: 'Number', visible: true },
+    { field: 'short_description', label: 'Short Description', visible: true },
+    { field: 'state', label: 'State', visible: true },
+    { field: 'opened_at', label: 'Opened', visible: true },
+    { field: 'process_objective', label: 'Process Objective', visible: false },
+    { field: 'annual_volume', label: 'Annual Volume', visible: false },
+    { field: 'effort_minutes', label: 'Effort (min)', visible: false },
+    { field: 'human_judgement_level', label: 'Human Judgement', visible: false },
+    { field: 'expected_resolution_rate', label: 'Expected Resolution Rate', visible: false }
+  ];
+
+  c.showColumnSettings = false;
+
+  c.getVisibleColumns = function() {
+    return c.allColumns.filter(function(col) {
+      return col.visible;
+    });
+  };
+
+  c.toggleColumnSettings = function() {
+    c.showColumnSettings = !c.showColumnSettings;
+  };
+
+  c.openRequest = function(sysId) {
+    var url = '?id=form&table=x_168647_aiva_request&sys_id=' + sysId;
+    window.location.href = url;
+  };
+};
+]]></client_script>
+    <controller_as>c</controller_as>
+    <css><![CDATA[.sp-aiva-request-list {
+  position: relative;
+  min-height: 400px;
+  padding-bottom: 80px;
+}
+
+.sp-aiva-request-list .panel {
+  border-color: $border-tertiary;
+  border-radius: $border-radius-large;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+}
+
+.sp-aiva-request-list .panel-heading {
+  background: $background-primary;
+  border-bottom: 1px solid $border-tertiary;
+  padding: 16px 24px;
+}
+
+.sp-aiva-request-list .panel-title {
+  font-size: $font-size-large;
+  font-weight: 600;
+  color: $text-color;
+  margin: 0;
+
+  .glyphicon {
+    margin-right: 8px;
+    color: $brand-primary;
+  }
+}
+
+/* Column settings panel */
+.sp-aiva-column-panel {
+  background-color: $background-secondary;
+  border-bottom: 1px solid $border-tertiary;
+  padding: 12px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.sp-aiva-column-option {
+  display: inline-flex;
+  align-items: center;
+  font-weight: normal;
+  color: $text-color;
+  cursor: pointer;
+  margin-bottom: 0;
+
+  input[type="checkbox"] {
+    margin-right: 6px;
+    margin-top: 0;
+  }
+
+  span {
+    font-size: $font-size-small;
+  }
+}
+
+/* Table */
+.sp-aiva-table-wrapper {
+  padding: 0;
+  overflow: hidden;
+}
+
+.sp-aiva-request-list .table {
+  margin-bottom: 0;
+}
+
+.sp-aiva-th {
+  background-color: $background-secondary;
+  color: $text-muted;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 12px 16px;
+  border-bottom: 2px solid $border-tertiary;
+  white-space: nowrap;
+}
+
+.sp-aiva-request-list .table > tbody > tr > td {
+  padding: 12px 16px;
+  color: $text-color;
+  font-size: $font-size-base;
+  border-top: 1px solid $border-tertiary;
+  vertical-align: middle;
+}
+
+.sp-aiva-row-clickable {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: $background-secondary;
+  }
+}
+
+/* Empty state */
+.sp-aiva-empty {
+  padding: 64px 24px;
+}
+
+.sp-aiva-empty-icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 16px;
+  opacity: 0.35;
+  color: $text-muted;
+}
+
+.sp-aiva-empty h4 {
+  font-size: $font-size-large;
+  font-weight: 600;
+  color: $text-color;
+  margin-bottom: 8px;
+}
+
+/* Floating Action Button */
+.sp-aiva-fab-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.sp-aiva-fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: $brand-primary;
+  color: $btn-primary-color;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover,
+  &:focus {
+    background-color: $brand-primary-dark;
+    color: $btn-primary-color;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+]]></css>
+    <data_table>sp_instance</data_table>
+    <demo_data/>
+    <description/>
+    <docs/>
+    <field_list/>
+    <has_preview>false</has_preview>
+    <id>aiva-request-list</id>
+    <internal>false</internal>
+    <link>function link(scope, element, attrs, controller) {
+}</link>
+    <name>AIVA Request List</name>
+    <option_schema/>
+    <public>false</public>
+    <roles/>
+    <script><![CDATA[;(function() {
+  data.requests = [];
+  data.columns = [];
+
+  if (input) {
+    // Use input columns if provided by client
+    data.columns = input.columns || [];
+  }
+
+  var userID = gs.getUserID() + '';
+  var limit = options.limit || 20;
+
+  var gr = new GlideRecord('x_168647_aiva_request');
+  gr.addQuery('opened_by', userID);
+  gr.orderByDesc('sys_created_on');
+  gr.setLimit(limit);
+  gr.query();
+
+  while (gr.next()) {
+    var record = {};
+    record.sys_id = gr.getUniqueValue() + '';
+    record.number = gr.getValue('number') + '';
+    record.short_description = gr.getValue('short_description') + '';
+    record.state = gr.getDisplayValue('state') + '';
+    record.opened_at = gr.getDisplayValue('opened_at') + '';
+    record.process_objective = gr.getValue('process_objective') + '';
+    record.annual_volume = gr.getValue('annual_volume') + '';
+    record.effort_minutes = gr.getValue('effort_minutes') + '';
+    record.human_judgement_level = gr.getDisplayValue('human_judgement_level') + '';
+    record.expected_resolution_rate = gr.getValue('expected_resolution_rate') + '';
+    data.requests.push(record);
+  }
+})();
+]]></script>
+    <servicenow>false</servicenow>
+    <template><![CDATA[<div class="sp-aiva-request-list">
+  <!-- Header row with title and settings toggle -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="pull-left">
+        <h3 class="panel-title">
+          <span class="glyphicon glyphicon-list-alt"></span>
+          My AIVA Requests
+        </h3>
+      </div>
+      <div class="pull-right">
+        <button type="button"
+                class="btn btn-default btn-sm"
+                ng-click="c.toggleColumnSettings()"
+                title="Configure columns">
+          <span class="glyphicon glyphicon-cog"></span> Columns
+        </button>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <!-- Column settings panel -->
+    <div class="sp-aiva-column-panel" ng-if="c.showColumnSettings">
+      <label class="sp-aiva-column-option"
+             ng-repeat="col in c.allColumns track by col.field">
+        <input type="checkbox" ng-model="col.visible"/>
+        <span>{{col.label}}</span>
+      </label>
+    </div>
+
+    <!-- Data table -->
+    <div class="panel-body sp-aiva-table-wrapper">
+      <table class="table table-hover table-striped" ng-if="c.data.requests.length > 0">
+        <thead>
+          <tr>
+            <th class="sp-aiva-th"
+                ng-repeat="col in c.getVisibleColumns() track by col.field">
+              {{col.label}}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="req in c.data.requests track by req.sys_id"
+              ng-click="c.openRequest(req.sys_id)"
+              class="sp-aiva-row-clickable">
+            <td ng-repeat="col in c.getVisibleColumns() track by col.field">
+              {{req[col.field]}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Empty state -->
+      <div class="text-center sp-aiva-empty" ng-if="!c.data.requests || c.data.requests.length === 0">
+        <span class="glyphicon glyphicon-inbox sp-aiva-empty-icon"></span>
+        <h4>No AIVA requests found</h4>
+        <p class="text-muted">Submit your first AIVA use case to get started.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Action Button -->
+  <div class="sp-aiva-fab-container">
+    <a href="?id=aiva_submit"
+       class="sp-aiva-fab"
+       title="Submit new AIVA Request">
+      <span class="glyphicon glyphicon-plus"></span>
+    </a>
+  </div>
+</div>
+]]></template>
+  </sp_widget>
+</record_update>
