@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_app_route">
+  <sys_ux_app_route action="INSERT_OR_UPDATE">
+    <sys_id>95d6335d28d84cfab4ba24675cc4d8cf</sys_id>
+    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+    <sys_update_name>sys_ux_app_route_95d6335d28d84cfab4ba24675cc4d8cf</sys_update_name>
+    <app_config>65d3e3c223a640cab5a06935f7d93374</app_config>
+    <description/>
+    <extension_point/>
+    <fields>table,sysId</fields>
+    <icon/>
+    <interoperable>false</interoperable>
+    <name>Record Default</name>
+    <optional_parameters>query,extraParams,views,selectedTab</optional_parameters>
+    <order>0</order>
+    <parent_macroponent>c276387cc331101080d6d3658940ddd2</parent_macroponent>
+    <parent_macroponent_composition_element_id/>
+    <route_type>record</route_type>
+    <screen_type>8872e2a919ac43abbf4fbb448c76d0f7</screen_type>
+  </sys_ux_app_route>
+</record_update>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_app_config">
+  <sys_ux_app_config action="INSERT_OR_UPDATE">
+    <sys_id>65d3e3c223a640cab5a06935f7d93374</sys_id>
+    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+    <sys_update_name>sys_ux_app_config_65d3e3c223a640cab5a06935f7d93374</sys_update_name>
+    <active>true</active>
+    <custom_icon/>
+    <description>Workspace created by Fluent</description>
+    <disable_auto_reflow>false</disable_auto_reflow>
+    <encode_query_string>false</encode_query_string>
+    <icon/>
+    <landing_path>home</landing_path>
+    <name>AIVA Assessment Workspace</name>
+  </sys_ux_app_config>
+</record_update>

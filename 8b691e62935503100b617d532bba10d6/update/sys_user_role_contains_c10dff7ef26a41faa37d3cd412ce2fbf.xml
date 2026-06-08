@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role_contains">
+  <sys_user_role_contains action="INSERT_OR_UPDATE">
+    <sys_id>c10dff7ef26a41faa37d3cd412ce2fbf</sys_id>
+    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+    <sys_update_name>sys_user_role_contains_c10dff7ef26a41faa37d3cd412ce2fbf</sys_update_name>
+    <contains name="canvas_user">53ba8d32bddf4a7791742f24a690ee74</contains>
+    <role name="x_168647_aiva.ws_assessor">592461e8f6654a0f8905c5ec2aac93f7</role>
+  </sys_user_role_contains>
+</record_update>

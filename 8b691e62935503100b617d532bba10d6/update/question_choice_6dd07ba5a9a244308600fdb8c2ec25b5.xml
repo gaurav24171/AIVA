@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+  <question_choice action="INSERT_OR_UPDATE">
+    <sys_id>6dd07ba5a9a244308600fdb8c2ec25b5</sys_id>
+    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+    <sys_update_name>question_choice_6dd07ba5a9a244308600fdb8c2ec25b5</sys_update_name>
+    <inactive>false</inactive>
+    <order>2</order>
+    <question cat_item="3813e93f358e4ad8ad71d469e3dcaf11" name="expected_ai_assistance" variable_set="NULL">037fa4abef764a97873b3804842c8652</question>
+    <text>Searching for relevant information</text>
+    <value>searching_for_relevant_information</value>
+  </question_choice>
+</record_update>

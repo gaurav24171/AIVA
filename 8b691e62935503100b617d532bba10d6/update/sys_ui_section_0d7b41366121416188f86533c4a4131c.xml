@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="AI Assessment" section_id="0d7b41366121416188f86533c4a4131c" sys_domain="global" table="x_168647_aiva_request" view="Default view">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.begin_split</element>
+      <position>0</position>
+      <sys_id>8af83cce7aa047adb350d0c8e1f3fb86</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="AI Assessment" display_value="AI Assessment" name="x_168647_aiva_request" sys_domain="global" view="Default view">0d7b41366121416188f86533c4a4131c</sys_ui_section>
+      <sys_user/>
+      <type>.begin_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>expected_ai_assistance</element>
+      <position>1</position>
+      <sys_id>ad37372c0c684de69fbe5e2264fb3bab</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="AI Assessment" display_value="AI Assessment" name="x_168647_aiva_request" sys_domain="global" view="Default view">0d7b41366121416188f86533c4a4131c</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.split</element>
+      <position>2</position>
+      <sys_id>46383913ba064eb49f705ecb4037166c</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="AI Assessment" display_value="AI Assessment" name="x_168647_aiva_request" sys_domain="global" view="Default view">0d7b41366121416188f86533c4a4131c</sys_ui_section>
+      <sys_user/>
+      <type>.split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>human_judgement_level</element>
+      <position>3</position>
+      <sys_id>a228cb6b5df14c6f8d7130daca5babe8</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="AI Assessment" display_value="AI Assessment" name="x_168647_aiva_request" sys_domain="global" view="Default view">0d7b41366121416188f86533c4a4131c</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.end_split</element>
+      <position>4</position>
+      <sys_id>a6a292f4f100479382f75f88236d58a4</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="AI Assessment" display_value="AI Assessment" name="x_168647_aiva_request" sys_domain="global" view="Default view">0d7b41366121416188f86533c4a4131c</sys_ui_section>
+      <sys_user/>
+      <type>.end_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>ai_rationale</element>
+      <position>5</position>
+      <sys_id>252bb86354394e23bbfce9f320f56e62</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="AI Assessment" display_value="AI Assessment" name="x_168647_aiva_request" sys_domain="global" view="Default view">0d7b41366121416188f86533c4a4131c</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>AI Assessment</caption>
+      <header>false</header>
+      <name>x_168647_aiva_request</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>0d7b41366121416188f86533c4a4131c</sys_id>
+      <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view>Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

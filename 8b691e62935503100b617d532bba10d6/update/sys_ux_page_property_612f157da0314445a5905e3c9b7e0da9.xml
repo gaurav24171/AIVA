@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_page_property">
+  <sys_ux_page_property action="INSERT_OR_UPDATE">
+    <sys_id>612f157da0314445a5905e3c9b7e0da9</sys_id>
+    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+    <sys_update_name>sys_ux_page_property_612f157da0314445a5905e3c9b7e0da9</sys_update_name>
+    <description/>
+    <name>chrome_tab</name>
+    <page>fa2ac155357e446abe5668e3c985fb50</page>
+    <route/>
+    <suffix>chrome_tab</suffix>
+    <type>json</type>
+    <value>{"contextual":["record"],"newTabMenu":[{"label":{"translatable":true,"message":"New x_168647_aiva_request"},"routeInfo":{"route":"record","fields":{"table":"x_168647_aiva_request","sysId":"-1"},"multiInstField":"sysId"},"condition":{"tableDescription":{"table":"x_168647_aiva_request","canCreate":true}}}],"maxMainTabLimit":10,"maxTotalSubTabLimit":30}</value>
+  </sys_ux_page_property>
+</record_update>

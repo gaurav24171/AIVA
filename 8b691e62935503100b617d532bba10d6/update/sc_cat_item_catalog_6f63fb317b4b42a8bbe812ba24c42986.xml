@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog">
+  <sc_cat_item_catalog action="INSERT_OR_UPDATE">
+    <sys_id>6f63fb317b4b42a8bbe812ba24c42986</sys_id>
+    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+    <sys_update_name>sc_cat_item_catalog_6f63fb317b4b42a8bbe812ba24c42986</sys_update_name>
+    <sc_cat_item>3813e93f358e4ad8ad71d469e3dcaf11</sc_cat_item>
+    <sc_catalog>e0d08b13c3330100c8b837659bba8fb4</sc_catalog>
+  </sc_cat_item_catalog>
+</record_update>

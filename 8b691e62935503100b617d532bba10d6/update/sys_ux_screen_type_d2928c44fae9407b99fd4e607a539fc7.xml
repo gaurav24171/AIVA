@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_screen_type">
+  <sys_ux_screen_type action="INSERT_OR_UPDATE">
+    <sys_id>d2928c44fae9407b99fd4e607a539fc7</sys_id>
+    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+    <sys_update_name>sys_ux_screen_type_d2928c44fae9407b99fd4e607a539fc7</sys_update_name>
+    <description/>
+    <name>Simple List</name>
+  </sys_ux_screen_type>
+</record_update>

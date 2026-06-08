@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_action_role">
+  <sys_ui_action_role action="INSERT_OR_UPDATE">
+    <sys_id>78d828dbe0994dcf87f17f56ee13a2cf</sys_id>
+    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+    <sys_update_name>sys_ui_action_role_78d828dbe0994dcf87f17f56ee13a2cf</sys_update_name>
+    <sys_ui_action>6c494ae459f8475faef708477e2c1400</sys_ui_action>
+    <sys_user_role name="x_168647_aiva.assessor">e348c57588ee442a88d90b67b04d8963</sys_user_role>
+  </sys_ui_action_role>
+</record_update>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+  <sys_security_acl_role action="INSERT_OR_UPDATE">
+    <sys_id>a27d76e203444d008d64f3e5762e4c94</sys_id>
+    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+    <sys_update_name>sys_security_acl_role_a27d76e203444d008d64f3e5762e4c94</sys_update_name>
+    <sys_security_acl>598d2daab866421fae63f1a1a4d6f54b</sys_security_acl>
+    <sys_user_role name="x_168647_aiva.ws_assessor">592461e8f6654a0f8905c5ec2aac93f7</sys_user_role>
+  </sys_security_acl_role>
+</record_update>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="Human Capital &amp; Job Reallocation" section_id="23568d05b9a745b4add55d32b15025a2" sys_domain="global" table="x_168647_aiva_request" view="Default view">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.begin_split</element>
+      <position>0</position>
+      <sys_id>f9517e5fcd684f1bab9aaeeaf235c885</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Human Capital &amp; Job Reallocation" display_value="Human Capital &amp; Job Reallocation" name="x_168647_aiva_request" sys_domain="global" view="Default view">23568d05b9a745b4add55d32b15025a2</sys_ui_section>
+      <sys_user/>
+      <type>.begin_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>workforce_impact</element>
+      <position>1</position>
+      <sys_id>ea534066c1264285b928e62dd541fa34</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Human Capital &amp; Job Reallocation" display_value="Human Capital &amp; Job Reallocation" name="x_168647_aiva_request" sys_domain="global" view="Default view">23568d05b9a745b4add55d32b15025a2</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.split</element>
+      <position>2</position>
+      <sys_id>29567651b2bf4865b44b53d0e42833c6</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Human Capital &amp; Job Reallocation" display_value="Human Capital &amp; Job Reallocation" name="x_168647_aiva_request" sys_domain="global" view="Default view">23568d05b9a745b4add55d32b15025a2</sys_ui_section>
+      <sys_user/>
+      <type>.split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>fte_reduction</element>
+      <position>3</position>
+      <sys_id>660f5fe950c54335b251540ef8f0bade</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Human Capital &amp; Job Reallocation" display_value="Human Capital &amp; Job Reallocation" name="x_168647_aiva_request" sys_domain="global" view="Default view">23568d05b9a745b4add55d32b15025a2</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.end_split</element>
+      <position>4</position>
+      <sys_id>df3a735cbe3744b7b9f3b9fe95270d2d</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Human Capital &amp; Job Reallocation" display_value="Human Capital &amp; Job Reallocation" name="x_168647_aiva_request" sys_domain="global" view="Default view">23568d05b9a745b4add55d32b15025a2</sys_ui_section>
+      <sys_user/>
+      <type>.end_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>reallocation_strategy</element>
+      <position>5</position>
+      <sys_id>5dd30bdf938840a0aba4fbdb9fd883a1</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Human Capital &amp; Job Reallocation" display_value="Human Capital &amp; Job Reallocation" name="x_168647_aiva_request" sys_domain="global" view="Default view">23568d05b9a745b4add55d32b15025a2</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>Human Capital &amp; Job Reallocation</caption>
+      <header>false</header>
+      <name>x_168647_aiva_request</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>23568d05b9a745b4add55d32b15025a2</sys_id>
+      <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view>Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

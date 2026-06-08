@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_choice_set field="risk_impact" table="x_168647_aiva_request">
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>7f92859345414e5e9e4f0ba02630d8e6</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>risk_impact</element>
+      <label>Low</label>
+      <value>low</value>
+      <sequence>1</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>f72986ad3eb74eaf9d87df9215f5f004</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>risk_impact</element>
+      <label>Medium</label>
+      <value>medium</value>
+      <sequence>2</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>da8f129ef7c34524b38d051beb0b0d98</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>risk_impact</element>
+      <label>High</label>
+      <value>high</value>
+      <sequence>3</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice_set action="INSERT_OR_UPDATE">
+      <sys_id>1e244816d6a24e2abef571b86d0d5e66</sys_id>
+      <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+      <name>x_168647_aiva_request</name>
+      <element>risk_impact</element>
+    </sys_choice_set>
+  </sys_choice_set>
+</record_update>

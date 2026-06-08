@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_choice_set field="decision_logic" table="x_168647_aiva_request">
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>718c583cdc3149dc86d4dba1ac0fb4ec</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>decision_logic</element>
+      <label>Strict If/Then</label>
+      <value>strict_if_then</value>
+      <sequence>1</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>606fad83719f41ef943704aa48120e43</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>decision_logic</element>
+      <label>Mostly Rules</label>
+      <value>mostly_rules</value>
+      <sequence>2</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>700b0f4526844ef48ea8eb369f268ed3</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>decision_logic</element>
+      <label>Requires Judgment</label>
+      <value>requires_judgment</value>
+      <sequence>3</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice_set action="INSERT_OR_UPDATE">
+      <sys_id>9c7eceeabe3e4f1a9c35a1716d808d32</sys_id>
+      <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+      <name>x_168647_aiva_request</name>
+      <element>decision_logic</element>
+    </sys_choice_set>
+  </sys_choice_set>
+</record_update>

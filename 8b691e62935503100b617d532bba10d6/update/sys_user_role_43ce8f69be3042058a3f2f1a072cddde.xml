@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+  <sys_user_role action="INSERT_OR_UPDATE">
+    <sys_id>43ce8f69be3042058a3f2f1a072cddde</sys_id>
+    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+    <sys_update_name>sys_user_role_43ce8f69be3042058a3f2f1a072cddde</sys_update_name>
+    <assignable_by/>
+    <can_delegate>true</can_delegate>
+    <description>Business users who submit manual processes for evaluation</description>
+    <elevated_privilege>false</elevated_privilege>
+    <grantable>true</grantable>
+    <name>x_168647_aiva.requester</name>
+    <scoped_admin>false</scoped_admin>
+    <suffix>requester</suffix>
+  </sys_user_role>
+</record_update>

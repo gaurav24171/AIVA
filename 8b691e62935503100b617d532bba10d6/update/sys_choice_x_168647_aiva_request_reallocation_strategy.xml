@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_choice_set field="reallocation_strategy" table="x_168647_aiva_request">
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>eb88383c37cb484cb5e960fc490e8033</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>reallocation_strategy</element>
+      <label>Immediate Reallocation</label>
+      <value>immediate_reallocation</value>
+      <sequence>1</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>f46db9aae2964f4faa6c45dc092176ca</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>reallocation_strategy</element>
+      <label>Reskilling</label>
+      <value>reskilling</value>
+      <sequence>2</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>791f7992dc91480e905aaa80d4a140ad</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>reallocation_strategy</element>
+      <label>Roles Will Be Reduced</label>
+      <value>roles_will_be_reduced</value>
+      <sequence>3</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice_set action="INSERT_OR_UPDATE">
+      <sys_id>ecbb4f8fc57b4d4ca2a43b6c8570d2ec</sys_id>
+      <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+      <name>x_168647_aiva_request</name>
+      <element>reallocation_strategy</element>
+    </sys_choice_set>
+  </sys_choice_set>
+</record_update>

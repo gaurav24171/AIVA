@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script">
+  <sys_script action="INSERT_OR_UPDATE">
+    <sys_id>43f450e8cebd438a9fab6f35d15b1b95</sys_id>
+    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+    <sys_update_name>sys_script_43f450e8cebd438a9fab6f35d15b1b95</sys_update_name>
+    <abort_action>false</abort_action>
+    <access>package_private</access>
+    <action_delete>false</action_delete>
+    <action_insert>true</action_insert>
+    <action_query>false</action_query>
+    <action_update>true</action_update>
+    <active>true</active>
+    <add_message>false</add_message>
+    <advanced>true</advanced>
+    <change_fields>false</change_fields>
+    <client_callable>false</client_callable>
+    <collection>x_168647_aiva_request</collection>
+    <condition/>
+    <description/>
+    <execute_function>false</execute_function>
+    <filter_condition/>
+    <is_rest>false</is_rest>
+    <message/>
+    <name>Calculate Financials</name>
+    <order>100</order>
+    <priority>100</priority>
+    <rest_method/>
+    <rest_method_text/>
+    <rest_service/>
+    <rest_service_text/>
+    <rest_variables/>
+    <role_conditions/>
+    <script><![CDATA[(function executeRule(current, previous) {
+    var annualVolume = parseFloat(current.getValue('annual_volume')) || 0;
+    var effortMinutes = parseFloat(current.getValue('effort_minutes')) || 0;
+    var hourlyCost = parseFloat(current.getValue('hourly_cost')) || 0;
+
+    // Calculate current_annual_cost if all required fields are present
+    if (annualVolume > 0 && effortMinutes > 0 && hourlyCost > 0) {
+        var currentAnnualCost = (annualVolume * effortMinutes / 60) * hourlyCost;
+        current.setValue('current_annual_cost', currentAnnualCost.toString());
+    }
+
+    // Calculate year_one_net_roi if all required fields are present
+    var currentAnnualCostValue = parseFloat(current.getValue('current_annual_cost')) || 0;
+    var expectedResolutionRate = parseFloat(current.getValue('expected_resolution_rate')) || 0;
+    var buildEffort = parseFloat(current.getValue('build_effort')) || 0;
+    var monthlyRunCost = parseFloat(current.getValue('monthly_run_cost')) || 0;
+
+    if (currentAnnualCostValue > 0 && expectedResolutionRate > 0) {
+        var yearOneNetRoi = (currentAnnualCostValue * expectedResolutionRate / 100) - buildEffort - (monthlyRunCost * 12);
+        current.setValue('year_one_net_roi', yearOneNetRoi.toString());
+    }
+})(current, previous);
+]]></script>
+    <sys_policy/>
+    <template/>
+    <when>before</when>
+  </sys_script>
+</record_update>

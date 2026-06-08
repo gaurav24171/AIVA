@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="Process Details" section_id="5366d124b33b4a4b97f11c6eafa813b5" sys_domain="global" table="x_168647_aiva_request" view="Default view">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>process_objective</element>
+      <position>0</position>
+      <sys_id>e010b2ece3e04e64970191d175c6b1fd</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Process Details" display_value="Process Details" name="x_168647_aiva_request" sys_domain="global" view="Default view">5366d124b33b4a4b97f11c6eafa813b5</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>current_fulfillment</element>
+      <position>1</position>
+      <sys_id>bc04b059aef0448c9862a2165467b1e6</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Process Details" display_value="Process Details" name="x_168647_aiva_request" sys_domain="global" view="Default view">5366d124b33b4a4b97f11c6eafa813b5</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>pain_points</element>
+      <position>2</position>
+      <sys_id>956539f30c9942268068b581ff097d6a</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Process Details" display_value="Process Details" name="x_168647_aiva_request" sys_domain="global" view="Default view">5366d124b33b4a4b97f11c6eafa813b5</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>Process Details</caption>
+      <header>false</header>
+      <name>x_168647_aiva_request</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>5366d124b33b4a4b97f11c6eafa813b5</sys_id>
+      <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view>Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

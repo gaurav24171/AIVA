@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number">
+  <sys_number action="INSERT_OR_UPDATE">
+    <sys_id>54bf6b8194fd4d178148b477c2a6080b</sys_id>
+    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+    <sys_update_name>sys_number_54bf6b8194fd4d178148b477c2a6080b</sys_update_name>
+    <category>x_168647_aiva_request</category>
+    <maximum_digits>7</maximum_digits>
+    <number>1000</number>
+    <prefix>AIVA</prefix>
+  </sys_number>
+</record_update>

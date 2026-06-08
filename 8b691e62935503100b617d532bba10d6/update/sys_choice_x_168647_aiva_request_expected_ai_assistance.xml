@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_choice_set field="expected_ai_assistance" table="x_168647_aiva_request">
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>c8569401bf1545b4897e826fdb53c1c6</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>expected_ai_assistance</element>
+      <label>Summarising information</label>
+      <value>summarising_information</value>
+      <sequence>1</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>7d7a83a48f94427b9daef75752f675aa</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>expected_ai_assistance</element>
+      <label>Searching for relevant information</label>
+      <value>searching_for_relevant_information</value>
+      <sequence>2</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>1d1fecd449e84f02955ef7ed6abc80fd</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>expected_ai_assistance</element>
+      <label>Drafting content</label>
+      <value>drafting_content</value>
+      <sequence>3</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>c86341a312ee4b4383938f3f11b84d33</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>expected_ai_assistance</element>
+      <label>Classifying or categorising items</label>
+      <value>classifying_or_categorising_items</value>
+      <sequence>4</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>b1c23d717494470390a2d09b90af088f</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>expected_ai_assistance</element>
+      <label>Recommending next actions</label>
+      <value>recommending_next_actions</value>
+      <sequence>5</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>933c63ad3fe3437a8e349a9ce3ee69ef</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>expected_ai_assistance</element>
+      <label>Predicting outcomes or trends</label>
+      <value>predicting_outcomes_or_trends</value>
+      <sequence>6</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>96c80a55d80346b38929d3e418c075e1</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>expected_ai_assistance</element>
+      <label>Extracting information from documents</label>
+      <value>extracting_information_from_documents</value>
+      <sequence>7</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>73f163dc4de845be93a83b5a24745f92</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>expected_ai_assistance</element>
+      <label>Answering questions</label>
+      <value>answering_questions</value>
+      <sequence>8</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>f8c78a94823f4d66b83072e81b190381</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>expected_ai_assistance</element>
+      <label>Routing or prioritising work</label>
+      <value>routing_or_prioritising_work</value>
+      <sequence>9</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>15db395b4269472ba363190a496f9650</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>expected_ai_assistance</element>
+      <label>Assisting employee decisions</label>
+      <value>assisting_employee_decisions</value>
+      <sequence>10</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>61f937e3dc9541c3a74697cda19149fb</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>expected_ai_assistance</element>
+      <label>Automating customer interactions</label>
+      <value>automating_customer_interactions</value>
+      <sequence>11</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>2ff08f0720774106bb8a2ea0fdb5c8c2</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>expected_ai_assistance</element>
+      <label>Other</label>
+      <value>other</value>
+      <sequence>12</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice_set action="INSERT_OR_UPDATE">
+      <sys_id>33b06d5e141b46e084a2c75971e6af18</sys_id>
+      <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+      <name>x_168647_aiva_request</name>
+      <element>expected_ai_assistance</element>
+    </sys_choice_set>
+  </sys_choice_set>
+</record_update>

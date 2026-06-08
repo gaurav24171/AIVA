@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_choice_set field="human_judgement_level" table="x_168647_aiva_request">
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>932cc4f4caa24f7bb7908f9f4fe0c1f8</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>human_judgement_level</element>
+      <label>Very little</label>
+      <value>very_little</value>
+      <sequence>1</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>3bb80c595ea848e4bd6b1fbc6b7e8a0f</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>human_judgement_level</element>
+      <label>Some judgement</label>
+      <value>some_judgement</value>
+      <sequence>2</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>53bdfe5fc7684cbe8ecd2752b54b8490</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>human_judgement_level</element>
+      <label>Significant judgement</label>
+      <value>significant_judgement</value>
+      <sequence>3</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>46fe71f78bf144e78c471128092c2cc9</sys_id>
+      <name>x_168647_aiva_request</name>
+      <element>human_judgement_level</element>
+      <label>Expert-only judgement</label>
+      <value>expert_only_judgement</value>
+      <sequence>4</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice_set action="INSERT_OR_UPDATE">
+      <sys_id>3f90518e17aa452190e4aa70bd144905</sys_id>
+      <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+      <name>x_168647_aiva_request</name>
+      <element>human_judgement_level</element>
+    </sys_choice_set>
+  </sys_choice_set>
+</record_update>

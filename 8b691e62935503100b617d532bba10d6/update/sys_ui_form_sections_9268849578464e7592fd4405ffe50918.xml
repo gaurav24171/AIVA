@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_form_sections form_id="9268849578464e7592fd4405ffe50918" sys_domain="global" table="x_168647_aiva_request">
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>0</position>
+      <sys_id>0bd2d70ab0a14ab0b69c43bb31645a4b</sys_id>
+      <sys_ui_form display_value="x_168647_aiva_request" name="x_168647_aiva_request" sys_domain="global" view="Default view">9268849578464e7592fd4405ffe50918</sys_ui_form>
+      <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>1</position>
+      <sys_id>63ea5bc1d6b84cb7a9e1eb2be8f654be</sys_id>
+      <sys_ui_form display_value="x_168647_aiva_request" name="x_168647_aiva_request" sys_domain="global" view="Default view">9268849578464e7592fd4405ffe50918</sys_ui_form>
+      <sys_ui_section caption="AI Assessment" display_value="AI Assessment" name="x_168647_aiva_request" sys_domain="global" view="Default view">0d7b41366121416188f86533c4a4131c</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>2</position>
+      <sys_id>0f57e7e4038c4fd5b2d5d86093f346f6</sys_id>
+      <sys_ui_form display_value="x_168647_aiva_request" name="x_168647_aiva_request" sys_domain="global" view="Default view">9268849578464e7592fd4405ffe50918</sys_ui_form>
+      <sys_ui_section caption="Human Capital &amp; Job Reallocation" display_value="Human Capital &amp; Job Reallocation" name="x_168647_aiva_request" sys_domain="global" view="Default view">23568d05b9a745b4add55d32b15025a2</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>3</position>
+      <sys_id>6d22a30e0d4441e79885fea2bed792c3</sys_id>
+      <sys_ui_form display_value="x_168647_aiva_request" name="x_168647_aiva_request" sys_domain="global" view="Default view">9268849578464e7592fd4405ffe50918</sys_ui_form>
+      <sys_ui_section caption="Process Details" display_value="Process Details" name="x_168647_aiva_request" sys_domain="global" view="Default view">5366d124b33b4a4b97f11c6eafa813b5</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>4</position>
+      <sys_id>74768c5ab70f4219aec7c0d94dbdb83c</sys_id>
+      <sys_ui_form display_value="x_168647_aiva_request" name="x_168647_aiva_request" sys_domain="global" view="Default view">9268849578464e7592fd4405ffe50918</sys_ui_form>
+      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>5</position>
+      <sys_id>9d9f85b76dd245c88494f13db6cd1908</sys_id>
+      <sys_ui_form display_value="x_168647_aiva_request" name="x_168647_aiva_request" sys_domain="global" view="Default view">9268849578464e7592fd4405ffe50918</sys_ui_form>
+      <sys_ui_section caption="Calculated Results" display_value="Calculated Results" name="x_168647_aiva_request" sys_domain="global" view="Default view">734693c1b4a5414587cf9cd46a810ef7</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form action="INSERT_OR_UPDATE">
+      <name>x_168647_aiva_request</name>
+      <roles/>
+      <sys_id>9268849578464e7592fd4405ffe50918</sys_id>
+      <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+      <sys_user/>
+      <view>Default view</view>
+      <view_name/>
+    </sys_ui_form>
+  </sys_ui_form_sections>
+</record_update>

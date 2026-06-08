@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_action">
+  <sys_ui_action action="INSERT_OR_UPDATE">
+    <sys_id>6c494ae459f8475faef708477e2c1400</sys_id>
+    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
+    <sys_update_name>sys_ui_action_6c494ae459f8475faef708477e2c1400</sys_update_name>
+    <action_name>run_genai_pre_assessment</action_name>
+    <active>true</active>
+    <client/>
+    <client_script_v2/>
+    <comments/>
+    <condition/>
+    <form_button>true</form_button>
+    <form_button_v2>false</form_button_v2>
+    <form_context_menu>false</form_context_menu>
+    <form_link>false</form_link>
+    <form_menu_button_v2>false</form_menu_button_v2>
+    <form_style>primary</form_style>
+    <format_for_configurable_workspace>false</format_for_configurable_workspace>
+    <hint/>
+    <isolate_script>false</isolate_script>
+    <list_banner_button>false</list_banner_button>
+    <list_button>false</list_button>
+    <list_choice>false</list_choice>
+    <list_context_menu>false</list_context_menu>
+    <list_link>false</list_link>
+    <list_save_with_form_button>false</list_save_with_form_button>
+    <list_style/>
+    <messages/>
+    <name>Run GenAI Pre-Assessment</name>
+    <onclick/>
+    <order>100</order>
+    <overrides/>
+    <script><![CDATA[// Populate ai_pre_assessment with a generated analysis
+var analysis = '=== GenAI Pre-Assessment Output ===\n';
+analysis += 'Assessment Date: ' + gs.nowDateTime() + '\n\n';
+
+analysis += '--- Technical Fit Analysis ---\n';
+analysis += 'Data Structure: ' + current.getValue('data_structure') + '\n';
+analysis += 'Decision Logic: ' + current.getValue('decision_logic') + '\n';
+analysis += 'Expected Resolution Rate: ' + current.getValue('expected_resolution_rate') + '%\n';
+analysis += 'Contains PII: ' + current.getValue('contains_pii') + '\n\n';
+
+analysis += '--- Financial Summary ---\n';
+analysis += 'Current Annual Cost: ' + current.getValue('current_annual_cost') + '\n';
+analysis += 'Build Effort: ' + current.getValue('build_effort') + '\n';
+analysis += 'Monthly Run Cost: ' + current.getValue('monthly_run_cost') + '\n';
+analysis += 'Year One Net ROI: ' + current.getValue('year_one_net_roi') + '\n\n';
+
+analysis += '--- Recommendation ---\n';
+var decisionLogic = current.getValue('decision_logic');
+var containsPii = current.getValue('contains_pii');
+if (decisionLogic == 'requires_judgment' && containsPii == 'true') {
+    analysis += 'RECOMMENDATION: Private Enterprise LLM deployment required.\n';
+    analysis += 'Rationale: Process requires judgement AND contains PII data.\n';
+} else if (decisionLogic == 'strict_if_then') {
+    analysis += 'RECOMMENDATION: Legacy RPA / Rule-based automation.\n';
+    analysis += 'Rationale: Process follows strict if/then logic with no ambiguity.\n';
+} else {
+    analysis += 'RECOMMENDATION: Generative AI solution suitable.\n';
+    analysis += 'Rationale: Process involves flexible decision-making appropriate for AI.\n';
+}
+
+current.setValue('ai_pre_assessment', analysis);
+current.update();
+]]></script>
+    <show_insert>true</show_insert>
+    <show_multiple_update>false</show_multiple_update>
+    <show_query>false</show_query>
+    <show_update>true</show_update>
+    <table>x_168647_aiva_request</table>
+    <ui11_compatible>false</ui11_compatible>
+    <ui16_compatible/>
+  </sys_ui_action>
+</record_update>
