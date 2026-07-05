@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $element, $window, $timeout) {
+    var c = this;
+
+    $timeout(function() {
+        var canvas = $element.find('#lightfallCanvas')[0];
+        if (!canvas) return;
+
+        var ctx = canvas.getContext('2d');
+        var width, height, centerX;
+        var streaks = [];
+
+        // Color palette matching the ReactBits image
+        var colors = [
+            { r: 255, g: 255, b: 255 }, // Bright White
+            { r: 255, g: 150, b: 200 }, // Pink/Magenta
+            { r: 100, g: 200, b: 255 }, // Cyan/Light Blue
+            { r: 180, g: 100, b: 255 }  // Soft Purple
+        ];
+
+        // Resize canvas to fit the window and find the center
+        function resize() {
+            width = canvas.width = $window.innerWidth;
+            height = canvas.height = $window.innerHeight;
+            centerX = width / 2;
+        }
+        angular.element($window).bind('resize', resize);
+        resize();
+
+        // Helper function to generate a new streak
+        function createStreak() {
+            var colorBase = colors[Math.floor(Math.random() * colors.length)];
+            return {
+                baseX: Math.random() * width, // Starting anchor X at the top of the screen
+                y: Math.random() * height * 1.5 - height, // Start randomly on or above screen
+                length: Math.random() * 150 + 80, // Tail length
+                speed: Math.random() * 3 + 1.5,   // Fall speed
+                opacity: Math.random() * 0.7 + 0.3, // Brightness
+                width: Math.random() * 2 + 1,     // Thickness
+                color: colorBase                  // Assigned color
+            };
+        }
+
+        // Initialize the light streaks
+        var streakCount = 140; 
+        for (var i = 0; i < streakCount; i++) {
+            streaks.push(createStreak());
+        }
+
+        // Animation Loop
+        function draw() {
+            ctx.clearRect(0, 0, width, height);
+
+            for (var i = 0; i < streaks.length; i++) {
+                var streak = streaks[i];
+
+                // 1. Calculate the curved perspective
+                // Find how far the streak's anchor is from the center of the screen
+                var distanceFromCenter = streak.baseX - centerX;
+                
+                // The curve factor increases exponentially as the streak moves further down the Y axis
+                var curveFactor = Math.pow((Math.max(0, streak.y) / height), 2) * 0.8; 
+                var currentX = streak.baseX + (distanceFromCenter * curveFactor);
+
+                // Calculate the tail's position (it sits higher up, so it curves less)
+                var tailY = streak.y - streak.length;
+                var tailCurveFactor = Math.pow((Math.max(0, tailY) / height), 2) * 0.8;
+                var tailX = streak.baseX + (distanceFromCenter * tailCurveFactor);
+
+                // 2. Create the color gradient
+                var grad = ctx.createLinearGradient(currentX, streak.y, tailX, tailY);
+                // Head is solid colored/bright
+                grad.addColorStop(0, 'rgba(' + streak.color.r + ', ' + streak.color.g + ', ' + streak.color.b + ', ' + streak.opacity + ')');
+                // Tail fades to completely transparent
+                grad.addColorStop(1, 'rgba(' + streak.color.r + ', ' + streak.color.g + ', ' + streak.color.b + ', 0)');
+
+                // 3. Draw the curving tail
+                ctx.beginPath();
+                ctx.moveTo(tailX, tailY);
+                
+                // Use a quadratic curve for a smooth bend between the tail and the head
+                var cpY = tailY + (streak.length / 2);
+                var cpCurveFactor = Math.pow((Math.max(0, cpY) / height), 2) * 0.8;
+                var cpX = streak.baseX + (distanceFromCenter * cpCurveFactor);
+                
+                ctx.quadraticCurveTo(cpX, cpY, currentX, streak.y);
+                
+                ctx.strokeStyle = grad;
+                ctx.lineWidth = streak.width;
+                ctx.stroke();
+                
+                // 4. Draw a bright "dot" at the very head of the streak
+                ctx.beginPath();
+                ctx.arc(currentX, streak.y, streak.width / 1.5, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(255, 255, 255, ' + (streak.opacity + 0.2) + ')';
+                ctx.fill();
+
+                // 5. Move the streak down
+                streak.y += streak.speed;
+
+                // 6. Reset to the top once the entire tail falls off screen
+                if (tailY > height) {
+                    var newStreak = createStreak();
+                    newStreak.y = -newStreak.length; // Ensure it starts completely off-screen at the top
+                    streaks[i] = newStreak;
+                }
+            }
+
+            requestAnimationFrame(draw);
+        }
+        draw();
+        
+        // Clean up event listeners when navigating away
+        $scope.$on('$destroy', function() {
+             angular.element($window).unbind('resize', resize);
+        });
+    });
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.lightfall-fixed-bg {&#13;
+  position: fixed;&#13;
+  top: 0;&#13;
+  left: 0;&#13;
+  width: 100vw;&#13;
+  height: 100vh;&#13;
+  z-index: -1; /* Changed from -999 to slot it in front of the theme background */&#13;
+  pointer-events: none;&#13;
+  background: linear-gradient(180deg, #0f0c29 0%, #302b63 50%, #24243e 100%);&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>lightfall-background</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Lightfall Background</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-03 22:31:22</sys_created_on>
+        <sys_id>90eecb6e93b103100b617d532bba104c</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Lightfall Background</sys_name>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>sp_widget_90eecb6e93b103100b617d532bba104c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-03 22:57:36</sys_updated_on>
+        <template><![CDATA[<canvas id="lightfallCanvas" class="lightfall-fixed-bg"></canvas>]]></template>
+    </sp_widget>
+</record_update>

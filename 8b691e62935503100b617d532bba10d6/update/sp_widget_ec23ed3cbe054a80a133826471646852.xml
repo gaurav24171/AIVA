@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($location) {
+	var c = this;
+
+	// Use data from the server if it exists (for drafts), otherwise use defaults
+	var initData = c.data.record || {};
+
+	c.form = {
+		short_description: initData.short_description || "",
+		process_objective: initData.process_objective || "",
+		current_fulfillment: initData.current_fulfillment || "",
+		annual_volume: initData.annual_volume || null,
+		effort_minutes: initData.effort_minutes || null,
+		hourly_cost: initData.hourly_cost || null,
+		success_rate: initData.success_rate || null,
+		pain_points: initData.pain_points || "",
+		expected_ai_assistance: initData.expected_ai_assistance || "",
+		ai_rationale: initData.ai_rationale || "",
+		human_judgement_level: initData.human_judgement_level || "",
+		decision_logic: initData.decision_logic || "",
+		data_structure: initData.data_structure || "",
+		contains_pii: initData.contains_pii || false,
+		risk_impact: initData.risk_impact || "",
+		expected_resolution_rate: initData.expected_resolution_rate || null,
+		workforce_impact: initData.workforce_impact || "",
+		fte_reduction: initData.fte_reduction || null,
+		reallocation_strategy: initData.reallocation_strategy || "",
+		description: initData.description || "",
+		build_effort: initData.build_effort || null,
+		monthly_run_cost: initData.monthly_run_cost || null
+	};
+
+	c.errors = {};
+	c.submitting = false;
+	c.submitted = false;
+
+	// Choice field options
+	c.humanJudgementOptions = [
+		{ value: "some_judgement", label: "Some Judgement" },
+		{ value: "expert_only_judgement", label: "Expert-Only Judgement" },
+		{ value: "significant_judgement", label: "Significant Judgement" },
+		{ value: "very_little", label: "Very little" }
+	];
+
+	c.decisionLogicOptions = [
+		{ value: "mostly_rules", label: "Mostly Rules" },
+		{ value: "requires_judgment", label: "Requires Judgment" },
+		{ value: "strict_if_then", label: "Strict If/Then" }
+	];
+
+	c.dataStructureOptions = [
+		{ value: "mixed", label: "Mixed" },
+		{ value: "strictly_structured", label: "Strictly Structured" },
+		{ value: "unstructured", label: "Unstructured" }
+	];
+
+	c.riskImpactOptions = [
+		{ value: "low", label: "Low" },
+		{ value: "medium", label: "Medium" },
+		{ value: "high", label: "High" },
+		{ value: "critical", label: "Critical" }
+	];
+
+	c.workforceImpactOptions = [
+		{ value: "augmentation", label: "Augmentation" },
+		{ value: "displacement", label: "Displacement" }
+	];
+
+	c.reallocationStrategyOptions = [
+		{ value: "roles_will_be_reduced", label: "Roles Will Be Reduced" },
+		{ value: "immediate_reallocation", label: "Immediate Reallocation" },
+		{ value: "reskilling", label: "Reskilling" }
+	];
+
+	// Section visibility
+	c.sections = {
+		operational: true,
+		ai: true,
+		humanCapital: true,
+		processDetails: true
+	};
+
+	c.toggleSection = function(section) {
+		c.sections[section] = !c.sections[section];
+	};
+
+	c.validate = function(isDraft) {
+		c.errors = {};
+
+		if (isDraft) {
+			// Only Use Case Title is required for Draft
+			var titleValue = c.form.short_description;
+			if (!titleValue || titleValue.toString().trim() === "") {
+				c.errors.short_description = "Use Case Title is required to save a draft.";
+			}
+		} else {
+			// All fields are required for Submit
+			var requiredFields = [
+				{ name: "short_description", label: "Use Case Title" },
+				{ name: "process_objective", label: "Process objective" },
+				{ name: "current_fulfillment", label: "Current manual fulfillment" },
+				{ name: "annual_volume", label: "Annual Volume" },
+				{ name: "effort_minutes", label: "Effort per task" },
+				{ name: "hourly_cost", label: "Average resource cost per hour" },
+				{ name: "success_rate", label: "First time success rate" },
+				{ name: "pain_points", label: "Main pain points or bottlenecks" },
+				{ name: "expected_ai_assistance", label: "Expected AI assistance" },
+				{ name: "ai_rationale", label: "AI rationale" },
+				{ name: "human_judgement_level", label: "Human judgement level" },
+				{ name: "decision_logic", label: "Decision logic" },
+				{ name: "data_structure", label: "Data structure" },
+				{ name: "risk_impact", label: "Business Impact of Error" },
+				{ name: "expected_resolution_rate", label: "Expected Automation Resolution Rate" },
+				{ name: "workforce_impact", label: "Workforce Impact" },
+				{ name: "fte_reduction", label: "FTE Reduction" },
+				{ name: "reallocation_strategy", label: "Reallocation Strategy" },
+				{ name: "description", label: "Detailed Process Description" },
+				{ name: "build_effort", label: "Build Effort" },
+				{ name: "monthly_run_cost", label: "Monthly Run Cost" }
+			];
+
+			requiredFields.forEach(function(field) {
+				var value = c.form[field.name];
+				if (value === null || value === undefined || value.toString().trim() === "") {
+					c.errors[field.name] = field.label + " is required to submit.";
+				}
+			});
+		}
+
+		return Object.keys(c.errors).length === 0;
+	};
+
+	c.submit = function(isDraft) {
+        // Pass isDraft context to the validation function
+		if (!c.validate(isDraft)) { return; } 
+		c.submitting = true;
+		c.form.is_draft = isDraft;
+
+		c.server.get({ action: "submit", form: c.form, sys_id: c.data.sys_id }).then(function(r) {
+			c.submitting = false;
+			if (r.data.success) {
+				c.submitted = true;
+				c.data.success = true;
+				c.data.number = r.data.number;
+				c.data.message = isDraft ? "Draft saved successfully." : "Request submitted successfully.";
+			}
+		});
+	};
+
+	c.goHome = function() {
+		window.location.href = "/aiva";
+	};
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.aiva-submit-form {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.aiva-submit-form .panel {
+  border-color: $border-tertiary;
+  border-radius: $border-radius-base;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.aiva-submit-form .panel-heading {
+  background-color: $background-secondary;
+  border-bottom-color: $border-tertiary;
+  cursor: pointer;
+  padding: 12px 15px;
+  transition: background-color 0.2s ease;
+}
+
+.aiva-submit-form .panel-heading:hover {
+  background-color: darken($background-secondary, 3%);
+}
+
+.aiva-submit-form .panel-title {
+  font-size: $font-size-base;
+  font-weight: 600;
+  color: $text-color;
+  margin: 0;
+}
+
+.aiva-submit-form .panel-title .glyphicon {
+  margin-right: 8px;
+  font-size: $font-size-small;
+  color: $text-secondary;
+}
+
+.aiva-submit-form .panel-body {
+  padding: 20px 15px;
+  background-color: $background-primary;
+}
+
+.aiva-submit-form .form-group {
+  margin-bottom: 18px;
+}
+
+.aiva-submit-form .control-label {
+  font-size: $font-size-small;
+  font-weight: 600;
+  color: $text-color;
+  margin-bottom: 6px;
+}
+
+.sp-input {
+  border-color: $border-tertiary;
+  border-radius: $border-radius-base;
+  color: $text-color;
+  height: $input-height-base;
+  font-size: $font-size-base;
+  transition: border-color 0.15s, box-shadow 0.15s;
+
+  &amp;:focus {
+    border-color: $brand-primary;
+    box-shadow: 0 0 0 2px rgba($brand-primary, 0.15);
+  }
+}
+
+.sp-textarea {
+  border-color: $border-tertiary;
+  border-radius: $border-radius-base;
+  color: $text-color;
+  font-size: $font-size-base;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+
+  &amp;:focus {
+    border-color: $brand-primary;
+    box-shadow: 0 0 0 2px rgba($brand-primary, 0.15);
+  }
+}
+
+.sp-select-wrapper {
+  position: relative;
+}
+
+.sp-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 36px;
+  height: $input-height-base;
+  border-radius: $border-radius-base;
+  border-color: $border-tertiary;
+  cursor: pointer;
+
+  &amp;:focus {
+    border-color: $brand-primary;
+    box-shadow: 0 0 0 2px rgba($brand-primary, 0.15);
+  }
+}
+
+.sp-select-chevron {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $text-muted;
+  pointer-events: none;
+  font-size: 12px;
+}
+
+.aiva-submit-form .has-error .form-control {
+  border-color: $brand-danger;
+}
+
+.aiva-submit-form .has-error .help-block {
+  color: $brand-danger;
+  font-size: $font-size-small;
+  margin-top: 4px;
+}
+
+.aiva-submit-form .checkbox label {
+  font-size: $font-size-base;
+  color: $text-color;
+  font-weight: normal;
+}
+
+.sp-btn-group {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sp-btn-primary {
+  background-color: $brand-primary;
+  border-color: $brand-primary;
+  color: $btn-primary-color;
+  font-size: $font-size-base;
+  font-weight: 600;
+  padding: 10px 24px;
+  height: 44px;
+  border-radius: $border-radius-base;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+
+  &amp;:hover:not(:disabled) {
+    background-color: $brand-primary-dark;
+    border-color: $brand-primary-dark;
+    color: $btn-primary-color;
+  }
+
+  &amp;:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+}
+
+@keyframes sp-spin {
+  to { transform: rotate(360deg); }
+}
+
+.sp-spin {
+  animation: sp-spin 0.8s linear infinite;
+}
+
+.aiva-submit-form .alert {
+  border-radius: $border-radius-base;
+  padding: 20px;
+}
+
+.aiva-submit-form .alert-success {
+  background-color: $state-success-bg;
+  border-color: $brand-success;
+  color: darken($brand-success, 15%);
+}
+
+.aiva-submit-form .alert-success h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: darken($brand-success, 15%);
+}
+
+.aiva-submit-form .alert-danger {
+  background-color: $state-danger-bg;
+  border-color: $brand-danger;
+  color: darken($brand-danger, 15%);
+}
+
+//
+.aiva-success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.aiva-success-card {
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,.12);
+    border-top: 5px solid #28a745;
+}
+
+.success-icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    background: #28a745;
+    color: #fff;
+    font-size: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aiva-success-card h2 {
+    margin-top: 0;
+    color: #28a745;
+    font-weight: 600;
+}
+
+.success-message {
+    color: #555;
+    font-size: 16px;
+    margin: 15px 0 25px;
+}
+
+.request-number {
+    background: #f8f9fa;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.request-number span {
+    display: block;
+    color: #777;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.request-number strong {
+    display: block;
+    margin-top: 5px;
+    font-size: 24px;
+    color: #1b5e20;
+}
+
+.success-note {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.aiva-success-card .btn {
+    min-width: 220px;
+    border-radius: 30px;
+    padding: 12px 25px;
+}
+//
+
+.aiva-submit-form .panel { border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); overflow: hidden; }
+.aiva-submit-form .panel-heading { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 16px 24px; }
+.aiva-submit-form .panel-title { color: #1e293b; font-weight: 700; }
+.aiva-submit-form .panel-title .glyphicon { color: #4f46e5; }
+.sp-input, .sp-textarea, .sp-select { border: 1px solid #cbd5e1; border-radius: 8px; box-shadow: none; }
+.sp-input:focus, .sp-textarea:focus, .sp-select:focus { border-color: #4f46e5; outline: none; box-shadow: 0 0 0 3px rgba(79,70,229,0.2); }
+.aiva-actions { display: flex; gap: 16px; margin-top: 24px; padding-bottom: 40px;}
+.aiva-btn-primary { background: #4f46e5; color: white; border: none; border-radius: 8px; padding: 12px 24px; font-weight: 600; font-size: 16px; }
+.aiva-btn-primary:hover { background: #4338ca; color: white; }
+.aiva-btn-draft { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px 24px; font-weight: 600; font-size: 16px; }
+.aiva-btn-draft:hover { background: #e2e8f0; }
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>aiva-submit-form</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+}]]></link>
+        <name>AIVA Submit Form</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    data.success = false;
+    data.message = "";
+    data.number = "";
+    data.sys_id = $sp.getParameter('sys_id') || "";
+    data.record = {};
+
+    // --- INITIAL LOAD LOGIC ---
+    // If there is no input (meaning page load) and we have a sys_id, fetch the draft
+    if (!input && data.sys_id) {
+        var loadGr = new GlideRecord("x_168647_aiva_request");
+        if (loadGr.get(data.sys_id)) {
+            data.record.short_description = loadGr.getValue("short_description") || "";
+            data.record.process_objective = loadGr.getValue("process_objective") || "";
+            data.record.current_fulfillment = loadGr.getValue("current_fulfillment") || "";
+            data.record.annual_volume = parseInt(loadGr.getValue("annual_volume"), 10) || null;
+            data.record.effort_minutes = parseInt(loadGr.getValue("effort_minutes"), 10) || null;
+            data.record.hourly_cost = parseFloat(loadGr.getValue("hourly_cost")) || null;
+            data.record.success_rate = parseFloat(loadGr.getValue("success_rate")) || null;
+            data.record.pain_points = loadGr.getValue("pain_points") || "";
+            data.record.expected_ai_assistance = loadGr.getValue("expected_ai_assistance") || "";
+            data.record.ai_rationale = loadGr.getValue("ai_rationale") || "";
+            data.record.human_judgement_level = loadGr.getValue("human_judgement_level") || "";
+            data.record.decision_logic = loadGr.getValue("decision_logic") || "";
+            data.record.data_structure = loadGr.getValue("data_structure") || "";
+            data.record.contains_pii = (loadGr.getValue("contains_pii") == "1" || loadGr.getValue("contains_pii") == "true");
+            data.record.risk_impact = loadGr.getValue("risk_impact") || "";
+            data.record.expected_resolution_rate = parseFloat(loadGr.getValue("expected_resolution_rate")) || null;
+            data.record.workforce_impact = loadGr.getValue("workforce_impact") || "";
+            data.record.fte_reduction = parseFloat(loadGr.getValue("fte_reduction")) || null;
+            data.record.reallocation_strategy = loadGr.getValue("reallocation_strategy") || "";
+            data.record.description = loadGr.getValue("description") || "";
+            data.record.build_effort = parseFloat(loadGr.getValue("build_effort")) || null;
+            data.record.monthly_run_cost = parseFloat(loadGr.getValue("monthly_run_cost")) || null;
+        }
+    }
+
+    // --- SUBMIT LOGIC ---
+    if (input && input.action === "submit") {
+        try {
+            var gr = new GlideRecord("x_168647_aiva_request");
+            if (input.sys_id) {
+                gr.get(input.sys_id);
+            } else {
+                gr.initialize();
+            }
+
+            var form = input.form || {};
+
+            // Section 1: Operational Baseline
+            gr.short_description = form.short_description || "";
+            gr.setValue("process_objective", form.process_objective || "");
+            gr.setValue("current_fulfillment", form.current_fulfillment || "");
+            gr.setValue("annual_volume", form.annual_volume || 0);
+            gr.setValue("effort_minutes", form.effort_minutes || 0);
+            gr.setValue("hourly_cost", form.hourly_cost || 0);
+            gr.setValue("success_rate", form.success_rate || 0);
+            gr.setValue("pain_points", form.pain_points || "");
+
+            // Section 2: AI Assessment
+            gr.setValue("expected_ai_assistance", form.expected_ai_assistance || "");
+            gr.setValue("ai_rationale", form.ai_rationale || "");
+            gr.setValue("human_judgement_level", form.human_judgement_level || "");
+            gr.setValue("decision_logic", form.decision_logic || "");
+            gr.setValue("data_structure", form.data_structure || "");
+            gr.setValue("contains_pii", form.contains_pii ? "true" : "false");
+            gr.setValue("risk_impact", form.risk_impact || "");
+            gr.setValue("expected_resolution_rate", form.expected_resolution_rate || 0);
+
+            // Section 3: Human Capital & Job Reallocation
+            gr.setValue("workforce_impact", form.workforce_impact || "");
+            gr.setValue("fte_reduction", form.fte_reduction || 0);
+            gr.setValue("reallocation_strategy", form.reallocation_strategy || "");
+
+            // Section 4: Process Details
+            gr.setValue("description", form.description || "");
+            gr.setValue("build_effort", form.build_effort || 0);
+            gr.setValue("monthly_run_cost", form.monthly_run_cost || 0);
+
+            // Set state: 1 for Draft, -1 for Submitted
+            gr.setValue('state', form.is_draft ? '1' : '-1');
+
+            var sysId = input.sys_id ? gr.update() : gr.insert();
+            if (sysId) {
+                data.success = true;
+                data.number = gr.getValue("number");
+                data.message = "Request " + data.number + " submitted successfully.";
+            } else {
+                data.message = "Failed to create the request. Please try again.";
+            }
+        } catch (e) {
+            gs.error("AIVA Submit Form error: " + e.message);
+            data.message = "An unexpected error occurred. Please try again.";
+        }
+    }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 23:26:44</sys_created_on>
+        <sys_id>ec23ed3cbe054a80a133826471646852</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_name>AIVA Submit Form</sys_name>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>sp_widget_ec23ed3cbe054a80a133826471646852</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-04 12:41:03</sys_updated_on>
+        <template><![CDATA[<div class="aiva-submit-form">
+  <!-- Success State -->
+ <div ng-if="c.submitted" class="aiva-success-container">
+    <div class="aiva-success-card">
+
+        <div class="success-icon">
+            <span class="glyphicon" ng-class="c.form.is_draft ? 'glyphicon-floppy-saved' : 'glyphicon-ok'"></span>
+        </div>
+
+        <h2>{{c.form.is_draft ? 'Draft Saved Successfully!' : 'Request Submitted Successfully!'}}</h2>
+
+        <p class="success-message">
+            {{c.form.is_draft ? 'Your AI Value Assessment draft has been safely stored.' : 'Your AI Value Assessment request has been created successfully.'}}
+        </p>
+
+        <div class="request-number">
+            <span>Request Number</span>
+            <strong>{{c.data.number}}</strong>
+        </div>
+
+        <p class="success-note">
+            {{c.form.is_draft ? 'You can return to complete and submit this request later from your drafts.' : 'Your request has been submitted for review. You can track its progress from your requests.'}}
+        </p>
+
+        <button class="btn btn-primary btn-lg"
+                ng-click="c.goHome()">
+            <span class="glyphicon glyphicon-home"></span>
+            Return to Portal Home
+        </button>
+
+    </div>
+  </div>
+
+  <!-- Error Message -->
+  <div ng-if="c.data.errorMsg && !c.submitted" class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign"></span> {{c.data.errorMsg}}
+  </div>
+
+  <!-- Form -->
+  <form ng-if="!c.submitted" novalidate>
+
+    <!-- Section 1: Operational Baseline -->
+    <div class="panel panel-default">
+      <div class="panel-heading" ng-click="c.toggleSection('operational')">
+        <h3 class="panel-title">
+          <span class="glyphicon" ng-class="c.sections.operational ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right'"></span>
+          Section 1: Operational Baseline
+        </h3>
+      </div>
+      <div class="panel-body" ng-show="c.sections.operational">
+
+        <div class="form-group" ng-class="{'has-error': c.errors.short_description}">
+          <label class="control-label" for="short_description">Use Case Title <span class="text-danger">*</span></label>
+          <input type="text" id="short_description" class="form-control sp-input"
+                 ng-model="c.form.short_description" maxlength="160"
+                 placeholder="Enter a concise title for this use case">
+          <span class="help-block" ng-if="c.errors.short_description">{{c.errors.short_description}}</span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': c.errors.process_objective}">
+          <label class="control-label" for="process_objective">What is the high-level objective of this process? <span class="text-danger">*</span></label>
+          <textarea id="process_objective" class="form-control sp-textarea"
+                    ng-model="c.form.process_objective" maxlength="4000" rows="3"
+                    placeholder="Describe the high-level objective"></textarea>
+          <span class="help-block" ng-if="c.errors.process_objective">{{c.errors.process_objective}}</span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': c.errors.current_fulfillment}">
+          <label class="control-label" for="current_fulfillment">How is it currently fulfilled manually? <span class="text-danger">*</span></label>
+          <textarea id="current_fulfillment" class="form-control sp-textarea"
+                    ng-model="c.form.current_fulfillment" maxlength="4000" rows="3"
+                    placeholder="Describe the current manual process"></textarea>
+          <span class="help-block" ng-if="c.errors.current_fulfillment">{{c.errors.current_fulfillment}}</span>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <div class="form-group" ng-class="{'has-error': c.errors.annual_volume}">
+              <label class="control-label" for="annual_volume">How many tasks are completed annually? <span class="text-danger">*</span></label>
+              <input type="number" id="annual_volume" class="form-control sp-input"
+                     ng-model="c.form.annual_volume" placeholder="e.g. 5000">
+              <span class="help-block" ng-if="c.errors.annual_volume">{{c.errors.annual_volume}}</span>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <div class="form-group" ng-class="{'has-error': c.errors.effort_minutes}">
+              <label class="control-label" for="effort_minutes">How much effort per task (minutes)? <span class="text-danger">*</span></label>
+              <input type="number" id="effort_minutes" class="form-control sp-input"
+                     ng-model="c.form.effort_minutes" placeholder="e.g. 15">
+              <span class="help-block" ng-if="c.errors.effort_minutes">{{c.errors.effort_minutes}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <div class="form-group" ng-class="{'has-error': c.errors.hourly_cost}">
+              <label class="control-label" for="hourly_cost">Average resource cost per hour (£) <span class="text-danger">*</span></label>
+              <input type="number" id="hourly_cost" class="form-control sp-input"
+                     ng-model="c.form.hourly_cost" step="0.01" placeholder="e.g. 35.00">
+              <span class="help-block" ng-if="c.errors.hourly_cost">{{c.errors.hourly_cost}}</span>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <div class="form-group" ng-class="{'has-error': c.errors.success_rate}">
+              <label class="control-label" for="success_rate">First time success rate (%) <span class="text-danger">*</span></label>
+              <input type="number" id="success_rate" class="form-control sp-input"
+                     ng-model="c.form.success_rate" step="0.01" min="0" max="100" placeholder="e.g. 85">
+              <span class="help-block" ng-if="c.errors.success_rate">{{c.errors.success_rate}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': c.errors.pain_points}">
+          <label class="control-label" for="pain_points">Main pain points or bottlenecks <span class="text-danger">*</span></label>
+          <textarea id="pain_points" class="form-control sp-textarea"
+                    ng-model="c.form.pain_points" maxlength="4000" rows="3"
+                    placeholder="Describe the main pain points"></textarea>
+          <span class="help-block" ng-if="c.errors.pain_points">{{c.errors.pain_points}}</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 2: AI Assessment -->
+    <div class="panel panel-default">
+      <div class="panel-heading" ng-click="c.toggleSection('ai')">
+        <h3 class="panel-title">
+          <span class="glyphicon" ng-class="c.sections.ai ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right'"></span>
+          Section 2: AI Assessment
+        </h3>
+      </div>
+      <div class="panel-body" ng-show="c.sections.ai">
+
+        <div class="form-group" ng-class="{'has-error': c.errors.expected_ai_assistance}">
+          <label class="control-label" for="expected_ai_assistance">What would you expect the AI solution to help with? <span class="text-danger">*</span></label>
+          <textarea id="expected_ai_assistance" class="form-control sp-textarea"
+                    ng-model="c.form.expected_ai_assistance" maxlength="4000" rows="3"
+                    placeholder="Describe expected AI assistance"></textarea>
+          <span class="help-block" ng-if="c.errors.expected_ai_assistance">{{c.errors.expected_ai_assistance}}</span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': c.errors.ai_rationale}">
+          <label class="control-label" for="ai_rationale">Why do you believe AI is the right approach? <span class="text-danger">*</span></label>
+          <textarea id="ai_rationale" class="form-control sp-textarea"
+                    ng-model="c.form.ai_rationale" maxlength="4000" rows="3"
+                    placeholder="Explain the rationale for AI"></textarea>
+          <span class="help-block" ng-if="c.errors.ai_rationale">{{c.errors.ai_rationale}}</span>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <div class="form-group" ng-class="{'has-error': c.errors.human_judgement_level}">
+              <label class="control-label" for="human_judgement_level">How much human judgement is required? <span class="text-danger">*</span></label>
+              <div class="sp-select-wrapper">
+                <select id="human_judgement_level" class="form-control sp-select"
+                        ng-model="c.form.human_judgement_level"
+                        ng-options="opt.value as opt.label for opt in c.humanJudgementOptions">
+                  <option value="">-- Select --</option>
+                </select>
+                <span class="glyphicon glyphicon-chevron-down sp-select-chevron"></span>
+              </div>
+              <span class="help-block" ng-if="c.errors.human_judgement_level">{{c.errors.human_judgement_level}}</span>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <div class="form-group" ng-class="{'has-error': c.errors.decision_logic}">
+              <label class="control-label" for="decision_logic">Decision Logic <span class="text-danger">*</span></label>
+              <div class="sp-select-wrapper">
+                <select id="decision_logic" class="form-control sp-select"
+                        ng-model="c.form.decision_logic"
+                        ng-options="opt.value as opt.label for opt in c.decisionLogicOptions">
+                  <option value="">-- Select --</option>
+                </select>
+                <span class="glyphicon glyphicon-chevron-down sp-select-chevron"></span>
+              </div>
+              <span class="help-block" ng-if="c.errors.decision_logic">{{c.errors.decision_logic}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <div class="form-group" ng-class="{'has-error': c.errors.data_structure}">
+              <label class="control-label" for="data_structure">Data Structure <span class="text-danger">*</span></label>
+              <div class="sp-select-wrapper">
+                <select id="data_structure" class="form-control sp-select"
+                        ng-model="c.form.data_structure"
+                        ng-options="opt.value as opt.label for opt in c.dataStructureOptions">
+                  <option value="">-- Select --</option>
+                </select>
+                <span class="glyphicon glyphicon-chevron-down sp-select-chevron"></span>
+              </div>
+              <span class="help-block" ng-if="c.errors.data_structure">{{c.errors.data_structure}}</span>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <div class="form-group" ng-class="{'has-error': c.errors.risk_impact}">
+              <label class="control-label" for="risk_impact">Business Impact of Error <span class="text-danger">*</span></label>
+              <div class="sp-select-wrapper">
+                <select id="risk_impact" class="form-control sp-select"
+                        ng-model="c.form.risk_impact"
+                        ng-options="opt.value as opt.label for opt in c.riskImpactOptions">
+                  <option value="">-- Select --</option>
+                </select>
+                <span class="glyphicon glyphicon-chevron-down sp-select-chevron"></span>
+              </div>
+              <span class="help-block" ng-if="c.errors.risk_impact">{{c.errors.risk_impact}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <div class="form-group">
+              <label class="control-label">Contains PII / Confidential Data?</label>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" ng-model="c.form.contains_pii"> Yes, this process involves PII or confidential data
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <div class="form-group" ng-class="{'has-error': c.errors.expected_resolution_rate}">
+              <label class="control-label" for="expected_resolution_rate">Expected Automation Resolution Rate (%) <span class="text-danger">*</span></label>
+              <input type="number" id="expected_resolution_rate" class="form-control sp-input"
+                     ng-model="c.form.expected_resolution_rate" step="0.01" min="0" max="100"
+                     placeholder="e.g. 70">
+              <span class="help-block" ng-if="c.errors.expected_resolution_rate">{{c.errors.expected_resolution_rate}}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 3: Human Capital & Job Reallocation -->
+    <div class="panel panel-default">
+      <div class="panel-heading" ng-click="c.toggleSection('humanCapital')">
+        <h3 class="panel-title">
+          <span class="glyphicon" ng-class="c.sections.humanCapital ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right'"></span>
+          Section 3: Human Capital &amp; Job Reallocation
+        </h3>
+      </div>
+      <div class="panel-body" ng-show="c.sections.humanCapital">
+
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <div class="form-group" ng-class="{'has-error': c.errors.workforce_impact}">
+              <label class="control-label" for="workforce_impact">Workforce Impact <span class="text-danger">*</span></label>
+              <div class="sp-select-wrapper">
+                <select id="workforce_impact" class="form-control sp-select"
+                        ng-model="c.form.workforce_impact"
+                        ng-options="opt.value as opt.label for opt in c.workforceImpactOptions">
+                  <option value="">-- Select --</option>
+                </select>
+                <span class="glyphicon glyphicon-chevron-down sp-select-chevron"></span>
+              </div>
+              <span class="help-block" ng-if="c.errors.workforce_impact">{{c.errors.workforce_impact}}</span>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <div class="form-group" ng-class="{'has-error': c.errors.fte_reduction}">
+              <label class="control-label" for="fte_reduction">FTE Reduction <span class="text-danger">*</span></label>
+              <input type="number" id="fte_reduction" class="form-control sp-input"
+                     ng-model="c.form.fte_reduction" step="0.01" placeholder="e.g. 2.5">
+              <span class="help-block" ng-if="c.errors.fte_reduction">{{c.errors.fte_reduction}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': c.errors.reallocation_strategy}">
+          <label class="control-label" for="reallocation_strategy">Reallocation Strategy <span class="text-danger">*</span></label>
+          <div class="sp-select-wrapper">
+                <select id="reallocation_strategy" class="form-control sp-select"
+                        ng-model="c.form.reallocation_strategy"
+                        ng-options="opt.value as opt.label for opt in c.reallocationStrategyOptions">
+                  <option value="">-- Select --</option>
+                </select>
+                <span class="glyphicon glyphicon-chevron-down sp-select-chevron"></span>
+              </div>
+          <span class="help-block" ng-if="c.errors.reallocation_strategy">{{c.errors.reallocation_strategy}}</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 4: Process Details -->
+    <div class="panel panel-default">
+      <div class="panel-heading" ng-click="c.toggleSection('processDetails')">
+        <h3 class="panel-title">
+          <span class="glyphicon" ng-class="c.sections.processDetails ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right'"></span>
+          Section 4: Process Details
+        </h3>
+      </div>
+      <div class="panel-body" ng-show="c.sections.processDetails">
+
+        <div class="form-group" ng-class="{'has-error': c.errors.description}">
+          <label class="control-label" for="description">Detailed Process Description <span class="text-danger">*</span></label>
+          <textarea id="description" class="form-control sp-textarea"
+                    ng-model="c.form.description" maxlength="4000" rows="5"
+                    placeholder="Provide a detailed description of the process"></textarea>
+          <span class="help-block" ng-if="c.errors.description">{{c.errors.description}}</span>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 col-xs-12">
+            <div class="form-group" ng-class="{'has-error': c.errors.build_effort}">
+              <label class="control-label" for="build_effort">Build Effort (£) <span class="text-danger">*</span></label>
+              <input type="number" id="build_effort" class="form-control sp-input"
+                     ng-model="c.form.build_effort" step="0.01" placeholder="e.g. 15000">
+              <span class="help-block" ng-if="c.errors.build_effort">{{c.errors.build_effort}}</span>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xs-12">
+            <div class="form-group" ng-class="{'has-error': c.errors.monthly_run_cost}">
+              <label class="control-label" for="monthly_run_cost">Monthly Run Cost (£) <span class="text-danger">*</span></label>
+              <input type="number" id="monthly_run_cost" class="form-control sp-input"
+                     ng-model="c.form.monthly_run_cost" step="0.01" placeholder="e.g. 500">
+              <span class="help-block" ng-if="c.errors.monthly_run_cost">{{c.errors.monthly_run_cost}}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="aiva-actions">
+      <button type="button" class="btn aiva-btn-draft" ng-click="c.submit(true)" ng-disabled="c.submitting">
+        <i class="fa fa-save"></i> Save as Draft
+      </button>
+      <button type="button" class="btn aiva-btn-primary" ng-click="c.submit(false)" ng-disabled="c.submitting">
+        <i class="fa fa-paper-plane"></i> {{c.submitting ? 'Processing...' : 'Submit AIVA Request'}}
+      </button>
+    </div>
+
+  </form>
+</div>]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($window, $sce) {
+  var c = this;
+  
+  c.goBack = function() {
+    $window.history.back();
+  };
+
+  c.matrixX = 50; 
+  c.matrixY = 50;
+
+  c.$onInit = function() {
+    // Trust HTML fields so inline styles/borders don't get stripped by the portal
+    if (c.data.record) {
+        c.trustedCurrentArch = $sce.trustAsHtml(c.data.record.current_architecture || '');
+        c.trustedProposedArch = $sce.trustAsHtml(c.data.record.proposed_architecture || '');
+    }
+
+    if (c.data.record && c.data.record.state === 3) {
+      var roi = c.data.financials.year_1_net_roi || 0;
+      var suitability = c.data.record.ai_suitability_score || 0;
+
+      // X Axis (ROI): 0 is middle line. Assuming $100k maps to the far right edge.
+      var mappedX = 50 + (roi / 100000) * 50;
+      // Cap at 5% and 95% to keep the dot visually inside the box
+      c.matrixX = Math.max(5, Math.min(mappedX, 95));
+
+      // Y Axis (Suitability): Assuming 0-100 scale.
+      c.matrixY = Math.max(5, Math.min(suitability, 95));
+    }
+  };
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* --- ORIGINAL STYLES --- */
+.aiva-view-container { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 1000px; margin: 0 auto; padding-bottom: 40px; }
+.aiva-view-header { display: flex; justify-content: space-between; align-items: flex-start; background: white; padding: 24px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.aiva-view-header h2 { margin: 8px 0 4px 0; font-weight: 700; color: #1e293b; font-size: 24px;}
+.badge-submitted { background: #e0e7ff; color: #3730a3; padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; text-transform: uppercase; }
+
+/* New Custom Badge Classes for Final Decision */
+.badge-custom { padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-left: 8px; display: inline-block; }
+.badge-amber { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+.badge-green { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+.badge-red { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+
+.aiva-btn-back { background: #f1f5f9; color: #475569; font-weight: 600; border-radius: 8px; }
+.aiva-card { background: white; border-radius: 12px; border: 1px solid #e2e8f0; padding: 24px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); height: 100%; }
+.card-title { font-size: 16px; font-weight: 700; color: #1e293b; margin-top: 0; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9; }
+.text-indigo { color: #4f46e5; margin-right: 8px; }
+.aiva-data-list { list-style: none; padding: 0; margin: 0; }
+.aiva-data-list li { padding: 8px 0; border-bottom: 1px solid #f8fafc; color: #334155; display: flex; justify-content: space-between;}
+.aiva-data-list li span { font-weight: 500; text-align: right; max-width: 60%; }
+.details-section h5 { font-size: 14px; font-weight: 600; color: #64748b; margin-top: 16px; margin-bottom: 4px;}
+.details-section p { color: #334155; line-height: 1.5; white-space: pre-wrap; }
+.mt-3 { margin-top: 16px; }
+.mt-4 { margin-top: 24px; }
+
+/* --- EVALUATION DASHBOARD STYLING --- */
+.evaluation-dashboard { margin-top: 10px; }
+.eval-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
+.eval-header h3 { margin: 0 0 4px 0; font-weight: 800; color: #1e293b; font-size: 22px; }
+.pill-decision { background: #eef2ff; color: #4f46e5; padding: 6px 16px; border-radius: 999px; font-weight: 700; font-size: 14px; }
+.pill-decision i { margin-right: 6px; }
+
+/* Dashboard Alerts */
+.dashboard-alert { display: flex; padding: 16px 20px; border-radius: 8px; margin-bottom: 16px; align-items: flex-start; }
+.dashboard-alert i { font-size: 20px; margin-right: 16px; margin-top: 2px; }
+.dashboard-alert strong { display: block; font-size: 15px; margin-bottom: 4px; }
+.dashboard-alert p { margin: 0; font-size: 14px; line-height: 1.4; opacity: 0.9; }
+
+.alert-red { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
+.alert-yellow { background: #fffbeb; border: 1px solid #fde68a; color: #b45309; }
+
+/* Financial &amp; Note Cards */
+.dashboard-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+.section-heading { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; margin-top: 0; margin-bottom: 16px; letter-spacing: 0.5px; }
+
+.fin-row { margin-bottom: 12px; display: flex; flex-direction: column; }
+.fin-border { border-top: 1px solid #f1f5f9; padding-top: 12px; }
+.fin-label { font-size: 13px; color: #64748b; margin-bottom: 4px; }
+.fin-value { font-size: 18px; font-weight: 700; color: #1e293b; }
+.fin-value-large { font-size: 28px; font-weight: 800; line-height: 1.2; }
+.fin-subtext { font-size: 12px; color: #94a3b8; margin-top: 4px; }
+
+.architect-notes-card { background: #f8fafc; border: 1px solid #e2e8f0; }
+
+/* Decision Matrix */
+.matrix-wrapper { position: relative; padding-left: 40px; padding-bottom: 30px; margin-top: 20px; }
+.matrix-axis-y { 
+  position: absolute; 
+  left: -15px; /* Tweak this value (e.g., -10px or 5px) to move it closer or further from the matrix edge */
+  top: 50%; 
+  transform: translateY(-50%) rotate(-90deg); 
+  transform-origin: center; 
+  white-space: nowrap; /* Prevents the text from accidentally wrapping */
+  font-size: 11px; 
+  font-weight: 700; 
+  color: #64748b; 
+  text-transform: uppercase; 
+  letter-spacing: 1px;
+}
+.matrix-axis-x { text-align: center; font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-top: 12px; }
+
+.matrix-grid { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  aspect-ratio: 16/10; 
+  border-radius: 8px; 
+  overflow: hidden; 
+  border: 1px solid #cbd5e1;
+  position: relative;
+}
+
+.quadrant { display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; }
+.q-top-left { border-right: 1px solid #cbd5e1; border-bottom: 1px solid #cbd5e1; color: #d97706; background: #fffbeb; }
+.q-top-right { border-bottom: 1px solid #cbd5e1; color: #4f46e5; background: #f5f3ff; }
+.q-bottom-left { border-right: 1px solid #cbd5e1; color: #e11d48; background: #fff1f2; }
+.q-bottom-right { color: #059669; background: #ecfdf5; }
+
+/* Matrix Dot */
+.matrix-dot { position: absolute; width: 18px; height: 18px; background: #4f46e5; border-radius: 50%; border: 3px solid white; transform: translate(-50%, 50%); box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2); z-index: 10; transition: all 0.3s ease; }
+.dot-label { position: absolute; top: 24px; left: 50%; transform: translateX(-50%); background: #1e293b; color: white; padding: 4px 10px; border-radius: 4px; font-size: 10px; font-weight: 600; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+
+/* Helpers */
+.border-right { border-right: 1px solid #e2e8f0; }
+.fst-italic { font-style: italic; }
+.fw-bold { font-weight: 700; }</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>AIVA Record View</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  var sysId = $sp.getParameter('sys_id');
+  if (!sysId) return;
+
+  var gr = new GlideRecord('x_168647_aiva_request');
+  if (gr.get(sysId)) {
+    data.record = {
+      number: gr.getValue('number'),
+      short_description: gr.getValue('short_description'),
+      opened_at: gr.getDisplayValue('opened_at'),
+      state: parseInt(gr.getValue('state'), 10),
+
+      // Section 1: Operational Baseline
+      process_objective: gr.getValue('process_objective'),
+      current_fulfillment: gr.getValue('current_fulfillment'),
+      annual_volume: parseFloat(gr.getValue('annual_volume')) || 0,
+      effort_minutes: parseFloat(gr.getValue('effort_minutes')) || 0,
+      hourly_cost: parseFloat(gr.getValue('hourly_cost')) || 0,
+      success_rate: parseFloat(gr.getValue('success_rate')) || 0,
+      pain_points: gr.getValue('pain_points'),
+
+      // Section 2: AI Assessment
+      expected_ai_assistance: gr.getValue('expected_ai_assistance'),
+      ai_rationale: gr.getValue('ai_rationale'),
+      human_judgement_level: gr.getDisplayValue('human_judgement_level'),
+      decision_logic: gr.getDisplayValue('decision_logic'),
+      data_structure: gr.getDisplayValue('data_structure'),
+      contains_pii: gr.getValue('contains_pii') == '1' || gr.getValue('contains_pii') == 'true',
+      risk_impact: gr.getDisplayValue('risk_impact'),
+      expected_resolution_rate: parseFloat(gr.getValue('expected_resolution_rate')) || 0,
+
+      // Section 3: Human Capital
+      workforce_impact: gr.getDisplayValue('workforce_impact'),
+      workforce_impact_raw: gr.getValue('workforce_impact'),
+      fte_reduction: parseFloat(gr.getValue('fte_reduction')) || 0,
+      reallocation_strategy: gr.getDisplayValue('reallocation_strategy'),
+      reallocation_strategy_raw: gr.getValue('reallocation_strategy'),
+
+      // Section 4: Process Details
+      description: gr.getValue('description'),
+      build_effort: parseFloat(gr.getValue('build_effort')) || 0,
+      monthly_run_cost: parseFloat(gr.getValue('monthly_run_cost')) || 0,
+
+      // Decision & Evaluation Fields
+      final_decision: gr.getValue('final_decision'),
+      final_quadrant_decision: gr.getDisplayValue('final_quadrant_decision') || 'Pending',
+      quadrant_value: gr.getValue('final_quadrant_decision'), // Get the underlying value (1, 2, 3, or 4)
+      ai_suitability_score: parseFloat(gr.getValue('ai_suitability_score')) || 0,
+      year_one_net_roi: parseFloat(gr.getValue('year_one_net_roi')) || 0,
+      architect_notes: gr.getValue('architect_notes'),
+      current_architecture: gr.getValue('current_architecture'),
+      proposed_architecture: gr.getValue('proposed_architecture')
+    };
+
+    // Calculate Decision Status for the top bar
+    data.decision = { label: "", colorClass: "" };
+    var state = data.record.state;
+    var decisionVal = data.record.final_decision;
+
+    if (!decisionVal && state === -1) {
+        data.decision.label = "Under Consideration";
+        data.decision.colorClass = "badge-amber";
+    } else if (decisionVal === 'go_ai' && state === 3) {
+        data.decision.label = "Go for AI Automation";
+        data.decision.colorClass = "badge-green";
+    } else if (decisionVal === 'go_legacy' && state === 3) {
+        data.decision.label = "Go for Legacy Automation";
+        data.decision.colorClass = "badge-green";
+    }else if (decisionVal === 'no_go' && state === 3) {
+        data.decision.label = "Not fit for AI Automation";
+        data.decision.colorClass = "badge-red";
+    }
+
+    // Dynamic Matrix Text
+    data.matrix_text = "Awaiting final architectural review and decision.";
+    if (data.record.quadrant_value == '1') {
+        data.matrix_text = "High ROI and optimal AI suitability. Proceed to technical POC.";
+    } else if (data.record.quadrant_value == '2') {
+        data.matrix_text = "Requires advanced AI capabilities but offers lower relative ROI. Evaluate for future phases.";
+    } else if (data.record.quadrant_value == '3') {
+        data.matrix_text = "Low ROI and low AI suitability. Not recommended for AI automation.";
+    } else if (data.record.quadrant_value == '4') {
+        data.matrix_text = "High ROI but structured logic. Better suited for standard RPA/Rules-based automation.";
+    }
+
+    // --- DASHBOARD CALCULATIONS (Only relevant if Closed) ---
+    if (state === 3) {
+      data.financials = {};
+      data.financials.current_process_cost = (data.record.annual_volume * (data.record.effort_minutes / 60)) * data.record.hourly_cost;
+      data.financials.gross_expected_savings = data.financials.current_process_cost * (data.record.expected_resolution_rate / 100);
+      data.financials.year_1_costs = data.record.build_effort + (data.record.monthly_run_cost * 12);
+      data.financials.year_1_net_roi = data.record.year_one_net_roi;
+      data.financials.recurring_roi = data.financials.gross_expected_savings - (data.record.monthly_run_cost * 12);
+
+      data.alerts = {};
+      data.alerts.hr_hold = (data.record.fte_reduction > 0 && 
+                             data.record.workforce_impact_raw === 'displacement' && 
+                             data.record.reallocation_strategy_raw === 'roles_will_be_reduced');
+      data.alerts.security = (data.record.contains_pii === true);
+    }
+  }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-09 22:36:12</sys_created_on>
+        <sys_id>e2b923f6939d83100b617d532bba1001</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>AIVA Record View</sys_name>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>sp_widget_e2b923f6939d83100b617d532bba1001</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-05 10:37:08</sys_updated_on>
+        <template><![CDATA[<div class="aiva-view-container">
+  
+  <div class="aiva-view-header">
+    <div class="header-content">
+      <span class="badge-submitted" ng-if="c.data.record.state !== 3">Submitted</span>
+      <span class="badge-submitted" ng-if="c.data.record.state === 3" style="background:#d1fae5; color:#065f46;">Closed</span>
+      
+      <span ng-if="c.data.decision.label" class="badge-custom" ng-class="c.data.decision.colorClass">
+        {{::c.data.decision.label}}
+      </span>
+      <h2>{{::c.data.record.short_description}}</h2>
+      <p class="text-muted">{{::c.data.record.number}} • Opened on {{::c.data.record.opened_at}}</p>
+    </div>
+    <button class="btn aiva-btn-back" ng-click="c.goBack()">Back to List</button>
+  </div>
+
+  <div ng-if="c.data.record.state === 3" class="evaluation-dashboard">
+    
+    <div class="aiva-card mb-4" style="padding: 20px 24px;">
+      <div class="eval-header" style="margin: 0;">
+        <div>
+          <h3 style="margin: 0 0 4px 0; font-weight: 800; color: #1e293b; font-size: 22px;">Evaluation Results</h3>
+          <p class="text-muted" style="margin: 0;">Final dashboard based on business input and IT assessment.</p>
+        </div>
+        <div class="pill-decision">
+          <i class="fa fa-check-circle"></i> Decision: {{::c.data.record.final_quadrant_decision}}
+        </div>
+      </div>
+    </div>
+
+    <div ng-if="c.data.alerts.hr_hold" class="dashboard-alert alert-red">
+      <i class="fa fa-exclamation-triangle"></i>
+      <div>
+        <strong>HR Governance Hold Triggered</strong>
+        <p>This solution proposes displacing {{::c.data.record.fte_reduction}} FTEs with no current reallocation strategy. This ticket will be routed to HR and Leadership for review before technical approval.</p>
+      </div>
+    </div>
+
+    <div ng-if="c.data.alerts.security" class="dashboard-alert alert-yellow">
+      <i class="fa fa-info-circle"></i>
+      <div>
+        <strong>Security / Privacy Alert</strong>
+        <p>This use case contains PII. Public APIs (like standard ChatGPT) cannot be used. Costs may increase for private enterprise model hosting.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="dashboard-card mb-4">
+          <h5 class="section-heading">FINANCIAL ROI ANALYSIS</h5>
+          
+          <div class="fin-row">
+            <span class="fin-label">Current Process Cost (Annual)</span>
+            <span class="fin-value">{{::c.data.financials.current_process_cost | currency:'$':0}}</span>
+          </div>
+          
+          <div class="fin-row fin-border">
+            <span class="fin-label">Gross Expected Savings</span>
+            <span class="fin-value text-success">+{{::c.data.financials.gross_expected_savings | currency:'$':0}}</span>
+          </div>
+          
+          <div class="fin-row fin-border pb-3">
+            <span class="fin-label">Year 1 Implementation + Run Costs</span>
+            <span class="fin-value text-danger">-{{::c.data.financials.year_1_costs | currency:'$':0}}</span>
+          </div>
+          
+          <div class="fin-row fin-border pb-1">
+            <span class="fin-label fw-bold">YEAR 1 NET ROI</span>
+            <span class="fin-value-large" ng-class="{'text-success': c.data.financials.year_1_net_roi >= 0, 'text-danger': c.data.financials.year_1_net_roi < 0}">
+              {{c.data.financials.year_1_net_roi >= 0 ? '+' : ''}}{{::c.data.financials.year_1_net_roi | currency:'$':0}}
+            </span>
+            <span class="fin-subtext">Recurring ROI: {{::c.data.financials.recurring_roi | currency:'$':0}}/yr</span>
+          </div>
+        </div>
+
+        <div class="dashboard-card architect-notes-card" ng-if="c.data.record.architect_notes">
+          <h5 class="section-heading">ARCHITECT FINDINGS</h5>
+          <p class="fst-italic text-muted">"{{::c.data.record.architect_notes}}"</p>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="dashboard-card h-100">
+          <div class="text-center mb-4">
+            <h4 class="fw-bold text-dark mb-1">Decision Matrix</h4>
+            <p class="text-muted">{{::c.data.matrix_text}}</p>
+          </div>
+          
+          <div class="matrix-wrapper">
+            <div class="matrix-axis-y">AI Suitability</div>
+            <div class="matrix-grid">
+              <div class="quadrant q-top-left">R&D / Low Value</div>
+              <div class="quadrant q-top-right">AI Sweet Spot</div>
+              <div class="quadrant q-bottom-left">Reject</div>
+              <div class="quadrant q-bottom-right">Legacy Auto</div>
+              
+              <div class="matrix-dot" style="left: {{c.matrixX}}%; bottom: {{c.matrixY}}%;">
+                <div class="dot-label">Your Use Case</div>
+              </div>
+            </div>
+            <div class="matrix-axis-x">Business ROI ($) &rarr;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row mt-4 mb-5" ng-if="c.data.record.current_architecture || c.data.record.proposed_architecture">
+      <div class="col-md-12">
+         <div class="dashboard-card">
+           <h5 class="section-heading mb-3">ARCHITECTURE DETAILS</h5>
+           <div class="row">
+             <div class="col-md-6 border-right">
+               <h6 class="text-muted mb-3">Current Architecture</h6>
+               <div ng-bind-html="c.trustedCurrentArch"></div>
+             </div>
+             <div class="col-md-6">
+               <h6 class="text-muted mb-3">Proposed Architecture</h6>
+               <div ng-bind-html="c.trustedProposedArch"></div>
+             </div>
+           </div>
+         </div>
+      </div>
+    </div>
+    
+    <hr style="border-top: 2px solid #e2e8f0; margin: 40px 0; opacity: 0.2;">
+  </div>
+
+  <div class="aiva-card mt-2 mb-4" style="padding: 20px 24px;" ng-if="c.data.record.state === 3">
+    <h3 style="margin: 0; font-weight: 700; color: #1e293b;">Original Request Details</h3>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="aiva-card">
+        <h4 class="card-title"><i class="fa fa-file-text text-indigo"></i> Operational Baseline</h4>
+        <ul class="aiva-data-list">
+          <li><strong>Annual Volume:</strong> <span>{{::c.data.record.annual_volume || 'N/A'}}</span></li>
+          <li><strong>Effort per task:</strong> <span>{{::c.data.record.effort_minutes || '0'}} mins</span></li>
+          <li><strong>Resource Cost:</strong> <span>£{{::c.data.record.hourly_cost || '0.00'}} /hr</span></li>
+          <li><strong>Success Rate:</strong> <span>{{::c.data.record.success_rate || '0'}}%</span></li>
+        </ul>
+        <div class="details-section mt-3">
+          <h5>Process Objective</h5>
+          <p>{{::c.data.record.process_objective || 'Not provided'}}</p>
+          <h5>Current Fulfillment</h5>
+          <p>{{::c.data.record.current_fulfillment || 'Not provided'}}</p>
+          <h5>Pain Points</h5>
+          <p>{{::c.data.record.pain_points || 'Not provided'}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="aiva-card">
+        <h4 class="card-title"><i class="fa fa-cogs text-indigo"></i> AI Assessment</h4>
+        <ul class="aiva-data-list">
+          <li><strong>Human Judgement:</strong> <span>{{::c.data.record.human_judgement_level || 'N/A'}}</span></li>
+          <li><strong>Decision Logic:</strong> <span>{{::c.data.record.decision_logic || 'N/A'}}</span></li>
+          <li><strong>Data Structure:</strong> <span>{{::c.data.record.data_structure || 'N/A'}}</span></li>
+          <li><strong>Contains PII:</strong> <span>{{::c.data.record.contains_pii ? 'Yes' : 'No'}}</span></li>
+          <li><strong>Risk Impact:</strong> <span>{{::c.data.record.risk_impact || 'N/A'}}</span></li>
+          <li><strong>Expected Resolution Rate:</strong> <span>{{::c.data.record.expected_resolution_rate || '0'}}%</span></li>
+        </ul>
+        <div class="details-section mt-3">
+          <h5>Expected AI Assistance</h5>
+          <p>{{::c.data.record.expected_ai_assistance || 'Not provided'}}</p>
+          <h5>AI Rationale</h5>
+          <p>{{::c.data.record.ai_rationale || 'Not provided'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="aiva-card">
+        <h4 class="card-title"><i class="fa fa-users text-indigo"></i> Human Capital & Job Reallocation</h4>
+        <ul class="aiva-data-list">
+          <li><strong>Workforce Impact:</strong> <span>{{::c.data.record.workforce_impact || 'N/A'}}</span></li>
+          <li><strong>FTE Reduction:</strong> <span>{{::c.data.record.fte_reduction || '0'}}</span></li>
+          <li><strong>Reallocation Strategy:</strong> <span>{{::c.data.record.reallocation_strategy || 'N/A'}}</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="aiva-card">
+        <h4 class="card-title"><i class="fa fa-align-left text-indigo"></i> Process Details</h4>
+        <ul class="aiva-data-list">
+          <li><strong>Build Effort:</strong> <span>£{{::c.data.record.build_effort || '0.00'}}</span></li>
+          <li><strong>Monthly Run Cost:</strong> <span>£{{::c.data.record.monthly_run_cost || '0.00'}}</span></li>
+        </ul>
+        <div class="details-section mt-3">
+          <h5>Detailed Description</h5>
+          <p>{{::c.data.record.description || 'Not provided'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_list_category">
+    <sys_ux_list_category action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <configuration display_value="AIVA Assessment List Configuration">56e4372104404ca2ae625b217dfc01d7</configuration>
+        <description/>
+        <order>10</order>
+        <sys_class_name>sys_ux_list_category</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 22:21:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>61ecfa62e3d54f87bee2610664e821da</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AIVA Requests</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>sys_ux_list_category_61ecfa62e3d54f87bee2610664e821da</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 22:21:54</sys_updated_on>
+        <title>AIVA Requests</title>
+    </sys_ux_list_category>
+</record_update>

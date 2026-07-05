@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="par_visualization_permission">
+    <par_visualization_permission action="INSERT_OR_UPDATE">
+        <can_share>true</can_share>
+        <component display_value="Completed AIVA Requests">bbe02e0b936103100b617d532bba103c</component>
+        <group/>
+        <owner>true</owner>
+        <role/>
+        <sys_class_name>par_visualization_permission</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-22 22:11:24</sys_created_on>
+        <sys_id>40f0a24b936103100b617d532bba1078</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>bbe02e0b936103100b617d532bba103c</sys_name>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>par_visualization_permission_40f0a24b936103100b617d532bba1078</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-22 22:11:24</sys_updated_on>
+        <user display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</user>
+        <write>true</write>
+    </par_visualization_permission>
+</record_update>

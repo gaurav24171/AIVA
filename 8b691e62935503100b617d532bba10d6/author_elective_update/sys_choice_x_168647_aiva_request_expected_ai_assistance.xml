@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="expected_ai_assistance" table="x_168647_aiva_request" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>expected_ai_assistance</element>
+            <name>x_168647_aiva_request</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-08 22:21:43</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>expected_ai_assistance</sys_name>
+            <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+            <sys_update_name>sys_choice_x_168647_aiva_request_expected_ai_assistance</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-08 22:21:43</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Analyze text for phishing markers and su</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:56</sys_updated_on>
+            <value>Analyze text for phishing markers and su</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Analyze text for phishing markers and summarize threat level.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:52</sys_updated_on>
+            <value>Analyze text for phishing markers and summarize threat level.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Auto-populate PPT templates from SQL que</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:57</sys_updated_on>
+            <value>Auto-populate PPT templates from SQL que</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Auto-populate PPT templates from SQL queries.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:54</sys_updated_on>
+            <value>Auto-populate PPT templates from SQL queries.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Automate the deployment of patches.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:55</sys_updated_on>
+            <value>Automate the deployment of patches.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Categorize tickets and suggest initial t</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:54</sys_updated_on>
+            <value>Categorize tickets and suggest initial t</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Categorize tickets and suggest initial troubleshooting steps.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:53</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:53</sys_updated_on>
+            <value>Categorize tickets and suggest initial troubleshooting steps.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Detect language, translate contextually,</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:57</sys_updated_on>
+            <value>Detect language, translate contextually,</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Detect language, translate contextually, and reply.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:53</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:53</sys_updated_on>
+            <value>Detect language, translate contextually, and reply.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Digest daily logs and highlight severe r</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:57</sys_updated_on>
+            <value>Digest daily logs and highlight severe r</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Digest daily logs and highlight severe reactions.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:53</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:53</sys_updated_on>
+            <value>Digest daily logs and highlight severe reactions.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Extract address from email and update SA</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:57</sys_updated_on>
+            <value>Extract address from email and update SA</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Extract address from email and update SAP via API.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:54</sys_updated_on>
+            <value>Extract address from email and update SAP via API.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Extract amount, date, and vendor from im</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:54</sys_updated_on>
+            <value>Extract amount, date, and vendor from im</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Extract amount, date, and vendor from images.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:54</sys_updated_on>
+            <value>Extract amount, date, and vendor from images.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Generate 50 headline options based on co</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:58</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:58</sys_updated_on>
+            <value>Generate 50 headline options based on co</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Generate 50 headline options based on core product value.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:54</sys_updated_on>
+            <value>Generate 50 headline options based on core product value.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Highlight risky clauses and suggest appr</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:55</sys_updated_on>
+            <value>Highlight risky clauses and suggest appr</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Highlight risky clauses and suggest approved language.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:52</sys_updated_on>
+            <value>Highlight risky clauses and suggest approved language.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Read IoT sensor data and log it.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:56</sys_updated_on>
+            <value>Read IoT sensor data and log it.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Score sentiment and summarize trending t</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:55</sys_updated_on>
+            <value>Score sentiment and summarize trending t</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Score sentiment and summarize trending topics.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:53</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:53</sys_updated_on>
+            <value>Score sentiment and summarize trending topics.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Scrape logs and alert only on failures.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:57</sys_updated_on>
+            <value>Scrape logs and alert only on failures.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Scrape news, CRM data, and financials in</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:57</sys_updated_on>
+            <value>Scrape news, CRM data, and financials in</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Scrape news, CRM data, and financials into a 1-page summary.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:52</sys_updated_on>
+            <value>Scrape news, CRM data, and financials into a 1-page summary.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Search knowledge base and draft customiz</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:56</sys_updated_on>
+            <value>Search knowledge base and draft customiz</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Search knowledge base and draft customized RFP answers.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:53</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:53</sys_updated_on>
+            <value>Search knowledge base and draft customized RFP answers.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Transcribe audio and extract tasks/owner</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:56</sys_updated_on>
+            <value>Transcribe audio and extract tasks/owner</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Transcribe audio and extract tasks/owners.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:53</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:53</sys_updated_on>
+            <value>Transcribe audio and extract tasks/owners.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Translate syntax and suggest modern arch</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:55</sys_updated_on>
+            <value>Translate syntax and suggest modern arch</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Translate syntax and suggest modern architectural patterns.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:52</sys_updated_on>
+            <value>Translate syntax and suggest modern architectural patterns.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Trigger badge deactivation directly from</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:58</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:58</sys_updated_on>
+            <value>Trigger badge deactivation directly from</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Trigger badge deactivation directly from Workday termination event.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:55</sys_updated_on>
+            <value>Trigger badge deactivation directly from Workday termination event.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Trigger emails automatically upon workda</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:55</sys_updated_on>
+            <value>Trigger emails automatically upon workda</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Trigger emails automatically upon workday creation.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:54</sys_updated_on>
+            <value>Trigger emails automatically upon workday creation.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Verify identity via chat and trigger AD </label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-02 01:28:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-02 01:28:55</sys_updated_on>
+            <value>Verify identity via chat and trigger AD </value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Verify identity via chat and trigger AD script.</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 13:08:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 13:08:54</sys_updated_on>
+            <value>Verify identity via chat and trigger AD script.</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Summarising information</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-08 23:26:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-08 23:26:45</sys_updated_on>
+            <value>summarising_information</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Searching for relevant information</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-08 23:26:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-08 23:26:45</sys_updated_on>
+            <value>searching_for_relevant_information</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Drafting content</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-08 23:26:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-08 23:26:45</sys_updated_on>
+            <value>drafting_content</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Classifying or categorising items</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-08 23:26:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-08 23:26:45</sys_updated_on>
+            <value>classifying_or_categorising_items</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Recommending next actions</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-08 23:26:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-08 23:26:45</sys_updated_on>
+            <value>recommending_next_actions</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Predicting outcomes or trends</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-08 23:26:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-08 23:26:45</sys_updated_on>
+            <value>predicting_outcomes_or_trends</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Extracting information from documents</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>7</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-08 23:26:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-08 23:26:45</sys_updated_on>
+            <value>extracting_information_from_documents</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Answering questions</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>8</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-08 23:26:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-08 23:26:45</sys_updated_on>
+            <value>answering_questions</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Routing or prioritising work</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>9</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-08 23:26:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-08 23:26:46</sys_updated_on>
+            <value>routing_or_prioritising_work</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Assisting employee decisions</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>10</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-08 23:26:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-08 23:26:46</sys_updated_on>
+            <value>assisting_employee_decisions</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Automating customer interactions</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>11</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-08 23:26:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-08 23:26:46</sys_updated_on>
+            <value>automating_customer_interactions</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>expected_ai_assistance</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Other</label>
+            <language>en</language>
+            <name>x_168647_aiva_request</name>
+            <sequence>12</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-08 23:26:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-08 23:26:46</sys_updated_on>
+            <value>other</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_policy">
+    <sys_ui_policy action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <conditions table="x_168647_aiva_request">contains_pii=true^decision_logic=requires_judgment<item endquery="false" field="contains_pii" goto="false" newquery="false" operator="=" or="false" value="true"/>
+            <item display_value="Requires Judgment" endquery="false" field="decision_logic" goto="false" newquery="false" operator="=" or="false" value="requires_judgment"/>
+        </conditions>
+        <description/>
+        <global>true</global>
+        <inherit>false</inherit>
+        <isolate_script>false</isolate_script>
+        <model_id/>
+        <model_table/>
+        <on_load>true</on_load>
+        <order>100</order>
+        <reverse_if_false>true</reverse_if_false>
+        <run_scripts>false</run_scripts>
+        <script_false><![CDATA[function onCondition() {
+
+}]]></script_false>
+        <script_true><![CDATA[function onCondition() {
+
+}]]></script_true>
+        <set_values/>
+        <short_description>Security Alert - Private Enterprise LLM Required</short_description>
+        <sys_class_name>sys_ui_policy</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 22:21:53</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>61b8b721abc34c91962913fc5b322f56</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Security Alert - Private Enterprise LLM Required</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>sys_ui_policy_61b8b721abc34c91962913fc5b322f56</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 22:21:53</sys_updated_on>
+        <table>x_168647_aiva_request</table>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_ui_policy>
+</record_update>

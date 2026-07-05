@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="INSERT_OR_UPDATE">
+        <name>YOUR_API_KEY</name>
+        <rest_message_function display_value="POST">fdd481c293fd87500b617d532bba10ca</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-01 23:11:12</sys_created_on>
+        <sys_id>bbe4890293fd87500b617d532bba10ed</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>YOUR_API_KEY</sys_name>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_bbe4890293fd87500b617d532bba10ed</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-01 23:56:27</sys_updated_on>
+        <type>string</type>
+        <value>AQ.Ab8RN6KSE-SMVWkKk_-KlLpzmDEnen5xxqyR0JbSbbu1Ea8UUA</value>
+    </sys_rest_message_fn_parameters>
+</record_update>

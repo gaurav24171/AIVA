@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_168647_aiva_request</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>AIVA - Calculate AI Suitability</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    var score = 0;
+
+    // 1. Evaluate Data Structure (Weight: 40 points)
+    // GenAI thrives on unstructured data.
+    var dataStructure = current.getValue('data_structure');
+    if (dataStructure == 'unstructured') {
+        score += 40;
+    } else if (dataStructure == 'mixed') {
+        score += 20;
+    }
+
+    // 2. Evaluate Decision Logic (Weight: 40 points)
+    // GenAI is suited for complex, non-linear decisions.
+    var decisionLogic = current.getValue('decision_logic');
+    if (decisionLogic == 'requires_judgment') {
+        score += 40;
+    } else if (decisionLogic == 'mostly_rules') {
+        score += 20;
+    }
+
+    // 3. Evaluate Human Judgement Level (Weight: 20 points)
+    var judgement = current.getValue('human_judgement_level');
+    if (judgement == 'expert_only_judgement') {
+        score += 30;
+    } else if (judgement == 'significant_judgement') {
+        score += 20;
+    }else if (judgement == 'some_judgement') {
+        score += 10;
+    }
+
+    // 4. Security/Privacy Risk Penalty
+    // If it contains PII, deduct points as it complicates the AI architecture.
+    var containsPii = current.getValue('contains_pii');
+    if (containsPii == 'true' || containsPii == '1') {
+        score -= 10;
+    }
+
+    // 5. Clamp the score safely between 0 and 100
+    score = Math.max(0, Math.min(100, score));
+
+    // 6. Set the value on the record
+	current.setValue('ai_suitability_score', score);
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-01 22:23:28</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b2a9b00693f987500b617d532bba10de</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>AIVA - Calculate AI Suitability</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>sys_script_b2a9b00693f987500b617d532bba10de</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-04 10:08:22</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=b2a9b00693f987500b617d532bba10de"/>
+</record_update>
