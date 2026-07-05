@@ -1,179 +1,281 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_ui_section caption="IT &amp; Architecture Review" section_id="e192fbe48618428ebc2f8f2269612833" sys_domain="global" table="x_168647_aiva_request" view="Default view">
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.begin_split</element>
-      <position>0</position>
-      <sys_id>4b6b6e55e3d54eb7842f848ef8675ef7</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type>.begin_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>data_structure</element>
-      <position>1</position>
-      <sys_id>952323016b5849f28982318fceee2386</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.split</element>
-      <position>2</position>
-      <sys_id>15f9165ef81546628262e321e3e960ef</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type>.split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>decision_logic</element>
-      <position>3</position>
-      <sys_id>108b6202cb1b4ec388e0906639415ae0</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.end_split</element>
-      <position>4</position>
-      <sys_id>f31a76d0330a46369caf36c345da0126</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type>.end_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.begin_split</element>
-      <position>5</position>
-      <sys_id>bf3375f04266400baeeb4cf6b704c5eb</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type>.begin_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>expected_resolution_rate</element>
-      <position>6</position>
-      <sys_id>046848d6999d4fe88a73fe3ee5c284ff</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.split</element>
-      <position>7</position>
-      <sys_id>7e5780cdea7845cda349cf80f3f03392</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type>.split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>risk_impact</element>
-      <position>8</position>
-      <sys_id>6fcce91e0244413888e9f93b377ba289</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.end_split</element>
-      <position>9</position>
-      <sys_id>bd8c24678c3148698a5fef621d3803bf</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type>.end_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.begin_split</element>
-      <position>10</position>
-      <sys_id>04dc76503e6f4edfb9c616fa43a1342c</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type>.begin_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>build_effort</element>
-      <position>11</position>
-      <sys_id>af39ac6af7c64c8baa30b71645b7fc61</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.split</element>
-      <position>12</position>
-      <sys_id>f7f623c22a4d417c95a0925a015a638e</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type>.split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>monthly_run_cost</element>
-      <position>13</position>
-      <sys_id>da6a7b2ae04d4dd4b8667fa5953a8b2c</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.end_split</element>
-      <position>14</position>
-      <sys_id>e77786a245a748168d68689d64123461</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type>.end_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>contains_pii</element>
-      <position>15</position>
-      <sys_id>5f07b49756f54edaa00beaa13a7b9f83</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>architect_notes</element>
-      <position>16</position>
-      <sys_id>8462c6b59f8c4c258248a4490283bd35</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>ai_pre_assessment</element>
-      <position>17</position>
-      <sys_id>26eeefeb2b874b3385be6be5f514dbe1</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_section action="INSERT_OR_UPDATE">
-      <caption>IT &amp; Architecture Review</caption>
-      <header>false</header>
-      <name>x_168647_aiva_request</name>
-      <roles/>
-      <sys_domain>global</sys_domain>
-      <sys_id>e192fbe48618428ebc2f8f2269612833</sys_id>
-      <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
-      <sys_user/>
-      <title>false</title>
-      <view_name/>
-      <view>Default view</view>
+    <sys_ui_section caption="IT &amp; Architecture Review" section_id="e192fbe48618428ebc2f8f2269612833" sys_domain="global" table="x_168647_aiva_request" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>ac7dc58e9331c7500b617d532bba1001</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>data_structure</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>2c7dc58e9331c7500b617d532bba1002</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>a87dc58e9331c7500b617d532bba1003</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>decision_logic</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>287dc58e9331c7500b617d532bba1004</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>a47dc58e9331c7500b617d532bba1005</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>247dc58e9331c7500b617d532bba1006</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>expected_resolution_rate</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>a07dc58e9331c7500b617d532bba1007</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>207dc58e9331c7500b617d532bba1008</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>risk_impact</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>ac7dc58e9331c7500b617d532bba1008</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>2c7dc58e9331c7500b617d532bba1009</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>10</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>a87dc58e9331c7500b617d532bba100a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>build_effort</element>
+            <position>11</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>287dc58e9331c7500b617d532bba100b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>12</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>a47dc58e9331c7500b617d532bba100c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>monthly_run_cost</element>
+            <position>13</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>247dc58e9331c7500b617d532bba100d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>14</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>a07dc58e9331c7500b617d532bba100e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>contains_pii</element>
+            <position>15</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>207dc58e9331c7500b617d532bba100f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>architect_notes</element>
+            <position>16</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>ac7dc58e9331c7500b617d532bba100f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>ai_pre_assessment</element>
+            <position>17</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-01 23:48:23</sys_created_on>
+            <sys_id>2c7dc58e9331c7500b617d532bba1010</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="IT &amp; Architecture Review" display_value="IT &amp; Architecture Review" name="x_168647_aiva_request" sys_domain="global" view="Default view">e192fbe48618428ebc2f8f2269612833</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-01 23:48:23</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>IT &amp; Architecture Review</caption>
+            <header>false</header>
+            <name>x_168647_aiva_request</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-08 22:21:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e192fbe48618428ebc2f8f2269612833</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_168647_aiva_request</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+            <sys_update_name>sys_ui_section_e192fbe48618428ebc2f8f2269612833</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-08 22:21:54</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
     </sys_ui_section>
-  </sys_ui_section>
 </record_update>

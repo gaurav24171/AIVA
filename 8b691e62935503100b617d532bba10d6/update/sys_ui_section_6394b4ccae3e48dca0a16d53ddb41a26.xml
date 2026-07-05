@@ -1,107 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_ui_section caption="Operational Baseline" section_id="6394b4ccae3e48dca0a16d53ddb41a26" sys_domain="global" table="x_168647_aiva_request" view="Default view">
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.begin_split</element>
-      <position>0</position>
-      <sys_id>5a9a1764ecf746948e7185630dbe3c7b</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
-      <sys_user/>
-      <type>.begin_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>annual_volume</element>
-      <position>1</position>
-      <sys_id>f452dbd1ffdd47b3be5e47de4ac2adcc</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.split</element>
-      <position>2</position>
-      <sys_id>cf897d4fcf4349868cf958e2e3c15c4a</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
-      <sys_user/>
-      <type>.split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>effort_minutes</element>
-      <position>3</position>
-      <sys_id>9dd0b2adc1b04d53bb4b763ef54cd713</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.end_split</element>
-      <position>4</position>
-      <sys_id>2dd714051746409591fd097668ae4f94</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
-      <sys_user/>
-      <type>.end_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.begin_split</element>
-      <position>5</position>
-      <sys_id>8d18fb8a978b49dd9c50d9a655d656a5</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
-      <sys_user/>
-      <type>.begin_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>hourly_cost</element>
-      <position>6</position>
-      <sys_id>1ee6c97e098b427aa29d1e632a94743b</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.split</element>
-      <position>7</position>
-      <sys_id>8cdd5641819a40bdb2ffff08fe8b41c3</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
-      <sys_user/>
-      <type>.split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>success_rate</element>
-      <position>8</position>
-      <sys_id>e5fc111f2b2e4ca1a36fab334b10e80e</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.end_split</element>
-      <position>9</position>
-      <sys_id>1b2e3b98dff142a5998366e58f8a2c57</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
-      <sys_user/>
-      <type>.end_split</type>
-    </sys_ui_element>
-    <sys_ui_section action="INSERT_OR_UPDATE">
-      <caption>Operational Baseline</caption>
-      <header>false</header>
-      <name>x_168647_aiva_request</name>
-      <roles/>
-      <sys_domain>global</sys_domain>
-      <sys_id>6394b4ccae3e48dca0a16d53ddb41a26</sys_id>
-      <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
-      <sys_user/>
-      <title>false</title>
-      <view_name/>
-      <view>Default view</view>
+    <sys_ui_section caption="Operational Baseline" section_id="6394b4ccae3e48dca0a16d53ddb41a26" sys_domain="global" table="x_168647_aiva_request" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 12:48:46</sys_created_on>
+            <sys_id>ab33563a937d43100b617d532bba10cd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 12:48:46</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 12:48:46</sys_created_on>
+            <sys_id>2b33563a937d43100b617d532bba10ce</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 12:48:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>opened_by</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 12:48:46</sys_created_on>
+            <sys_id>a733563a937d43100b617d532bba10cf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 12:48:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>opened_at</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 12:48:46</sys_created_on>
+            <sys_id>2733563a937d43100b617d532bba10d0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 12:48:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 12:48:46</sys_created_on>
+            <sys_id>a333563a937d43100b617d532bba10d1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 12:48:46</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>state</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 12:48:46</sys_created_on>
+            <sys_id>2333563a937d43100b617d532bba10d2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 12:48:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>final_decision</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 12:48:46</sys_created_on>
+            <sys_id>af33563a937d43100b617d532bba10d2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 12:48:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>assignment_group</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 12:48:46</sys_created_on>
+            <sys_id>2f33563a937d43100b617d532bba10d3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 12:48:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>assigned_to</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 12:48:46</sys_created_on>
+            <sys_id>ab33563a937d43100b617d532bba10d4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 12:48:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 12:48:46</sys_created_on>
+            <sys_id>2b33563a937d43100b617d532bba10d5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 12:48:46</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>short_description</element>
+            <position>10</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 12:48:46</sys_created_on>
+            <sys_id>a733563a937d43100b617d532bba10d6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 12:48:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>current_architecture</element>
+            <position>11</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 12:48:46</sys_created_on>
+            <sys_id>2733563a937d43100b617d532bba10d7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 12:48:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>proposed_architecture</element>
+            <position>12</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-07-04 12:48:46</sys_created_on>
+            <sys_id>a333563a937d43100b617d532bba10d8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Operational Baseline" display_value="Operational Baseline" name="x_168647_aiva_request" sys_domain="global" view="Default view">6394b4ccae3e48dca0a16d53ddb41a26</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-07-04 12:48:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Operational Baseline</caption>
+            <header>false</header>
+            <name>x_168647_aiva_request</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-08 22:21:53</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6394b4ccae3e48dca0a16d53ddb41a26</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_168647_aiva_request</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+            <sys_update_name>sys_ui_section_6394b4ccae3e48dca0a16d53ddb41a26</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-08 22:21:53</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
     </sys_ui_section>
-  </sys_ui_section>
 </record_update>

@@ -1,60 +1,80 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script">
-  <sys_script action="INSERT_OR_UPDATE">
-    <sys_id>43f450e8cebd438a9fab6f35d15b1b95</sys_id>
-    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
-    <sys_update_name>sys_script_43f450e8cebd438a9fab6f35d15b1b95</sys_update_name>
-    <abort_action>false</abort_action>
-    <access>package_private</access>
-    <action_delete>false</action_delete>
-    <action_insert>true</action_insert>
-    <action_query>false</action_query>
-    <action_update>true</action_update>
-    <active>true</active>
-    <add_message>false</add_message>
-    <advanced>true</advanced>
-    <change_fields>false</change_fields>
-    <client_callable>false</client_callable>
-    <collection>x_168647_aiva_request</collection>
-    <condition/>
-    <description/>
-    <execute_function>false</execute_function>
-    <filter_condition/>
-    <is_rest>false</is_rest>
-    <message/>
-    <name>Calculate Financials</name>
-    <order>100</order>
-    <priority>100</priority>
-    <rest_method/>
-    <rest_method_text/>
-    <rest_service/>
-    <rest_service_text/>
-    <rest_variables/>
-    <role_conditions/>
-    <script><![CDATA[(function executeRule(current, previous) {
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_168647_aiva_request</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Calculate Financials</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
     var annualVolume = parseFloat(current.getValue('annual_volume')) || 0;
     var effortMinutes = parseFloat(current.getValue('effort_minutes')) || 0;
     var hourlyCost = parseFloat(current.getValue('hourly_cost')) || 0;
+    
+    var currentAnnualCost = 0;
 
-    // Calculate current_annual_cost if all required fields are present
+    // 1. Calculate current_annual_cost
     if (annualVolume > 0 && effortMinutes > 0 && hourlyCost > 0) {
-        var currentAnnualCost = (annualVolume * effortMinutes / 60) * hourlyCost;
-        current.setValue('current_annual_cost', currentAnnualCost.toString());
+        currentAnnualCost = (annualVolume * (effortMinutes / 60)) * hourlyCost;
+        current.setValue('current_annual_cost', currentAnnualCost);
+    } else {
+        // Fallback in case it was already calculated in a previous save
+        currentAnnualCost = parseFloat(current.getValue('current_annual_cost')) || 0;
     }
 
-    // Calculate year_one_net_roi if all required fields are present
-    var currentAnnualCostValue = parseFloat(current.getValue('current_annual_cost')) || 0;
+    // 2. Calculate year_one_net_roi
     var expectedResolutionRate = parseFloat(current.getValue('expected_resolution_rate')) || 0;
     var buildEffort = parseFloat(current.getValue('build_effort')) || 0;
     var monthlyRunCost = parseFloat(current.getValue('monthly_run_cost')) || 0;
 
-    if (currentAnnualCostValue > 0 && expectedResolutionRate > 0) {
-        var yearOneNetRoi = (currentAnnualCostValue * expectedResolutionRate / 100) - buildEffort - (monthlyRunCost * 12);
-        current.setValue('year_one_net_roi', yearOneNetRoi.toString());
-    }
-})(current, previous);
-]]></script>
-    <sys_policy/>
-    <template/>
-    <when>before</when>
-  </sys_script>
+    // Gross Savings = Current Cost * (Resolution Rate %)
+    var grossSavings = currentAnnualCost * (expectedResolutionRate / 100);
+    
+    // Net ROI = Savings minus One-Time Build Effort minus 12 Months OpEx
+    var yearOneNetRoi = grossSavings - buildEffort - (monthlyRunCost * 12);
+    
+    current.setValue('year_one_net_roi', yearOneNetRoi);
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 22:21:52</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>43f450e8cebd438a9fab6f35d15b1b95</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Calculate Financials</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>sys_script_43f450e8cebd438a9fab6f35d15b1b95</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-01 22:26:21</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=43f450e8cebd438a9fab6f35d15b1b95"/>
 </record_update>

@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
-  <question_choice action="INSERT_OR_UPDATE">
-    <sys_id>dfa4151b78024a069f57106390159bb6</sys_id>
-    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
-    <sys_update_name>question_choice_dfa4151b78024a069f57106390159bb6</sys_update_name>
-    <inactive>false</inactive>
-    <order>11</order>
-    <question cat_item="3813e93f358e4ad8ad71d469e3dcaf11" name="expected_ai_assistance" variable_set="NULL">037fa4abef764a97873b3804842c8652</question>
-    <text>Automating customer interactions</text>
-    <value>automating_customer_interactions</value>
-  </question_choice>
+    <question_choice action="INSERT_OR_UPDATE">
+        <inactive>false</inactive>
+        <order>11</order>
+        <published_ref/>
+        <question display_value="What would you expect the AI solution to help with?">037fa4abef764a97873b3804842c8652</question>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 22:21:43</sys_created_on>
+        <sys_id>dfa4151b78024a069f57106390159bb6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Automating customer interactions</sys_name>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>question_choice_dfa4151b78024a069f57106390159bb6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 22:21:43</sys_updated_on>
+        <text>Automating customer interactions</text>
+        <value>automating_customer_interactions</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=dfa4151b78024a069f57106390159bb6"/>
 </record_update>

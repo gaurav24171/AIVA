@@ -1,132 +1,568 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_hub_flow action="INSERT_OR_UPDATE">
-    <sys_id>2d8bddd2dfa34a0289d732b5ae044c0b</sys_id>
-    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
-    <sys_update_name>sys_hub_flow_2d8bddd2dfa34a0289d732b5ae044c0b</sys_update_name>
-    <access>public</access>
-    <active>false</active>
-    <annotation/>
-    <category/>
-    <description>Triggers HR Executive approval when workforce impact is Displacement and reallocation strategy is Roles Will Be Reduced</description>
-    <flow_priority>MEDIUM</flow_priority>
-    <generation_source>fluent</generation_source>
-    <internal_name>aiva_governance_approval_workforce_displacement</internal_name>
-    <label_cache>[{"name":"71c67487-f777-4206-8525-cfb4933c51a6.Record","label":"71c67487-f777-4206-8525-cfb4933c51a6➛Record","type":"string","base_type":"string","usedInstances":{"c300b2c9-fde3-433c-b198-15ca776b3481":["approval_conditions"]},"attributes":{}},{"name":"Created or Updated_1.current","label":"Trigger - Record Created or Updated➛x_168647_aiva_request Record","type":"reference","base_type":"reference","usedInstances":{"c300b2c9-fde3-433c-b198-15ca776b3481":["record"],"4f906165-b0ca-4640-9646-d5e4017c7642":["record"],"fd48d7d5-8a46-4b61-829a-4618b81f61cf":["record"]},"attributes":{}},{"name":"c300b2c9-fde3-433c-b198-15ca776b3481.approval_state","label":"c300b2c9-fde3-433c-b198-15ca776b3481➛approval_state","type":"string","base_type":"string","usedInstances":{"57b3d584-b9b0-4fe7-b702-f4f6b9cc1b9d":["condition"],"7e3dade2-8baf-4d8e-81c8-25ad54321e10":["condition"]},"attributes":{}}]</label_cache>
-    <name>AIVA Governance Approval - Workforce Displacement</name>
-    <run_as>user</run_as>
-    <run_with_roles/>
-    <show_draft_actions>false</show_draft_actions>
-    <status>draft</status>
-    <sys_policy/>
-    <type>flow</type>
-    <version>2</version>
-  <version_record/>
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <allow_high_security_roles>false</allow_high_security_roles>
+        <annotation/>
+        <attributes/>
+        <authored_on_release_version/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Triggers HR Executive approval when workforce impact is Displacement and reallocation strategy is Roles Will Be Reduced</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source>fluent</generation_source>
+        <internal_name>aiva_governance_approval_workforce_displacement</internal_name>
+        <label_cache>[{"name":"71c67487-f777-4206-8525-cfb4933c51a6.Record","label":"71c67487-f777-4206-8525-cfb4933c51a6➛Record","type":"string","base_type":"string","usedInstances":{"c300b2c9-fde3-433c-b198-15ca776b3481":["approval_conditions"]},"attributes":{}},{"name":"Created or Updated_1.current","label":"Trigger - Record Created or Updated➛x_168647_aiva_request Record","type":"reference","base_type":"reference","usedInstances":{"c300b2c9-fde3-433c-b198-15ca776b3481":["record"],"4f906165-b0ca-4640-9646-d5e4017c7642":["record"],"fd48d7d5-8a46-4b61-829a-4618b81f61cf":["record"]},"attributes":{}},{"name":"c300b2c9-fde3-433c-b198-15ca776b3481.approval_state","label":"c300b2c9-fde3-433c-b198-15ca776b3481➛approval_state","type":"string","base_type":"string","usedInstances":{"57b3d584-b9b0-4fe7-b702-f4f6b9cc1b9d":["condition"],"7e3dade2-8baf-4d8e-81c8-25ad54321e10":["condition"]},"attributes":{}}]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <master_snapshot_digest/>
+        <name>AIVA Governance Approval - Workforce Displacement</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 22:21:52</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2d8bddd2dfa34a0289d732b5ae044c0b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AIVA Governance Approval - Workforce Displacement</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>sys_hub_flow_2d8bddd2dfa34a0289d732b5ae044c0b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 22:21:52</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record>79d476af93a107100b617d532bba1077</version_record>
     </sys_hub_flow>
-  <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=2d8bddd2dfa34a0289d732b5ae044c0b^sys_idNOT INb6da85c7c3d74073be4f327a7cbaabe4"/>
-  <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
-    <sys_id>b6da85c7c3d74073be4f327a7cbaabe4</sys_id>
-    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
-    <category/>
-    <comment/>
-    <flow>2d8bddd2dfa34a0289d732b5ae044c0b</flow>
-    <name>Created or Updated</name>
-    <trigger_definition>a45d9180c32222002841b63b12d3aea7</trigger_definition>
-    <trigger_inputs>H4sIAAAAAAAAA71XXYvbOhD9K0JP90IKLVzaEujD7RcEelvobtuH0gpFGjuiykwqjZM1S/57kR1nbce7m71x9ilEGs2cOXNmJH+/lhxcnkOYYWSNBi7KOLNyKuVEej0HL6fyUs89yIl0yBBQ+8tyBXIqOS0r1Mu0Z2EFaAG5PmoW5Ax8cJHl9PuPiVxqtJoplHLKoYCJpGAhyOmzp08nsnKx8ycncq19kf5fqWfPXz7/54XSbq1VgN8FRE6hXFx5XX49zuy9A7/LJ5rgVvyvYbcGOc20j5CQOm8DYI1zpYNeAido15IH8uxh7VK03U6O4fNzgeITindXnCizojocDwmuSbyH3GuZNUwkZuVEZh9acQiFKUIAZKHRCmhichMzmy11DrXj7AI8GAa7Zyf7Etv//nMxOsx3CynbffBq5TC6L9sQGtpOCdpV085oQE6hQEWomoxbwmqg9oTUWz5dOPv63YroXkVo5uDmBUNMfrVdJ0nZptbbBwgu87QRMzxdZRrLfpkr3w6FxlIYQoYrHlFZc21+5YEKtLfFvbEQf1nIdOH57zGlTQHuBtC1eCRxp+DKYUvYHaZ66h7aO4/Eb3AN628cTb8htI4dDSm62YoPuphuZ9u0YjVcbyj8yigYUG650oZf1ZwaWALyzwDaezI6HVKRg2bIy1eBPES1cd6rOagAtjAwUKozuB6h0m1SB3gZqku30huNHBWT0taqlrv9xbUkC/5tq147FSiHq4Kj3LaqqQhb13ARQbUKnfw9YDR+WwCKC4jRUfplTg158pysjuua5tbY+JSuxKohKIgvEYKY3Rg2KEYcXkiojoHykfDJeZHMiRcHA5SCeE286JCQHiq3wDn1xfKQ+bpZAKq4l8O6m0Z/vHZWzzNYe4COkPB4z4cqQCXXSukH3ZF7Z0H5em+MmbtPuIgQGsdNDQ75P577ykcry/tr0cntLnh3EnaOWow2rIYedRSqB11KcMQpQAiKssEx5DKxIwCsmJeCFyAy8p42DvMKx5gfLEjpEumDeUsCiUV4FDj/rxcOR1JdvV5HdBbPOJB6mO4T6nhtcFlbnS5+QtO7F82pH6ltoWm/0WU8ULzLKqXtPo19mTSHNUdjRYY1hE5fv6cgqkVRrKzmMbMs0P0uQJmFxhziQVBtFqI2EbXJI7VO84RsHsqtrtmVvdc23dXx+2YA0JCot9sffwDxHKZwnBMAAA==</trigger_inputs>
-    <trigger_outputs/>
-    <trigger_type>record_create_or_update</trigger_type>
-  </sys_hub_trigger_instance_v2>
-  <sys_hub_action_instance_v2 action="delete_multiple" query="flow=2d8bddd2dfa34a0289d732b5ae044c0b^sys_idNOT IN71c67487f77742068525cfb4933c51a6,c300b2c9fde3433cb19815ca776b3481,4f906165b0ca46409646d5e4017c7642,fd48d7d58a464b61829a4618b81f61cf"/>
-  <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-    <sys_id>71c67487f77742068525cfb4933c51a6</sys_id>
-    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
-    <action_type>9d09f99587003300663ca1bb36cb0ba3</action_type>
-    <action_type_parent>9d09f99587003300663ca1bb36cb0ba3</action_type_parent>
-    <active>true</active>
-    <comment/>
-    <display_text/>
-    <flow>2d8bddd2dfa34a0289d732b5ae044c0b</flow>
-    <generation_source/>
-    <order>1</order>
-    <parent_ui_id/>
-    <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
-    <ui_id>71c67487-f777-4206-8525-cfb4933c51a6</ui_id>
-    <updation_source/>
-    <values>H4sIAAAAAAAAA5WRsWrDQAyGX6Vo9hMYMnQodO6QJRShynIjOPsOSRdiQt69xJTUrT2kq/4ffZ/uDhcYaRBowbMFxlQEGjhRqvcZOUMDnXpJNO3XibNpiWcOPQm0PSWXBgoZDRJi0F5g3toCH7OywPXa3KGcx05D8+gL6i3bvb49vZyF67x1hd+qPO7xA126BH2kX8dPjtXF8NNyLRtP8Dd/WGAm4YxdCmiPQ02hJQmacLbOkUywz3XskPimvPCrLtireXyX14Ybjf9/1vsXpxzxxyMCAAA=</values>
-  </sys_hub_action_instance_v2>
-  <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-    <sys_id>c300b2c9fde3433cb19815ca776b3481</sys_id>
-    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
-    <action_type>f8f2e9920b10030085c083eb37673abd</action_type>
-    <action_type_parent>f8f2e9920b10030085c083eb37673abd</action_type_parent>
-    <active>true</active>
-    <comment/>
-    <display_text/>
-    <flow>2d8bddd2dfa34a0289d732b5ae044c0b</flow>
-    <generation_source/>
-    <order>2</order>
-    <parent_ui_id/>
-    <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
-    <ui_id>c300b2c9-fde3-433c-b198-15ca776b3481</ui_id>
-    <updation_source/>
-    <values>H4sIAAAAAAAAA81TXW/TMBT9K5af24psbVPyFk0IeJ1gL+tk3dq3q8G1w7WdLYry31HSkmVkg0iTEI/385xzP25rbuGIPONQFORKMGKv0Sg+4yWYOAzwGVfaFwaqm3HES9JFyGXQJfJsD8bjjBdAcMSAxLOah6poa7ruosNsmlmP/s1Fsn8AFwftg6PqdRKDjLeSURGFgoADHvWWgwza2S3Pttw6i1s+2/I2S7TNOjfIEMH0gc5XNyc7EpzLk4H5VKug8l2mlwdU0Zy8zzzCwA7N2d+MJ/Ffcpy8i77Dia/+bSf9mqWzSre8/GA9eRdFn9vq421dp4lcp8tNOt+naTpfXrxbzzeri9Vc7nfL95eXcpXAenGN0pFqmrvxJN/abrLoXhVFg/6Z4AA7M7zAR5GsN+tlKkCXIAh/RPRhTP21tMmUOtzxT1Anb/gR9RUhBFTMEftatFtTIlnISIQ2NC/d598rJrNUTsYj2iC0evlMCME7O+D76Zp9eEQZ29bsVxprB6QJVca+HLRn+eebnJ2HxrQtnSnRswdH3/eOJLKTIoktNHvQ4cAKA9aiYuQMMkIVuw9cjNX/c/zpnxdI23veNHc/AbSebuYOBgAA</values>
-  </sys_hub_action_instance_v2>
-  <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-    <sys_id>4f906165b0ca46409646d5e4017c7642</sys_id>
-    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
-    <action_type>f9d01dd2c31332002841b63b12d3aea1</action_type>
-    <action_type_parent>f9d01dd2c31332002841b63b12d3aea1</action_type_parent>
-    <active>true</active>
-    <comment/>
-    <display_text/>
-    <flow>2d8bddd2dfa34a0289d732b5ae044c0b</flow>
-    <generation_source/>
-    <order>4</order>
-    <parent_ui_id>57b3d584-b9b0-4fe7-b702-f4f6b9cc1b9d</parent_ui_id>
-    <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
-    <ui_id>4f906165-b0ca-4640-9646-d5e4017c7642</ui_id>
-    <updation_source/>
-    <values>H4sIAAAAAAAAA7WRQUsEMQyF/0roeRhYkF0Z8CCyoEcX9SJaYhvXYjutaWZ2h6H/XWYFWd2Dc/GWhJe875HHUbUYSDVK8MWTPjSV6tF303CvF8vz5dlKo+tRM310lEVVyrqcPA4Pf8iyYZfk0ojrSTWv6DNVKiFjICFWzahkSL/MS6m+mZhMZHvEM45XTChkITLcJzuVelGbjplaKeUUbcbGbEobTReoFe3sD8wDXT7C3EV+120UyhfXG1jvyXTTccCUOPboYcvYCtkabu5ACAMEHCBxNEQWdk7eAHOmnCe3+nl9e5rrPyzmv4tC8iikvwKX8vQJHhOrEkgCAAA=</values>
-  </sys_hub_action_instance_v2>
-  <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
-    <sys_id>fd48d7d58a464b61829a4618b81f61cf</sys_id>
-    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
-    <action_type>f9d01dd2c31332002841b63b12d3aea1</action_type>
-    <action_type_parent>f9d01dd2c31332002841b63b12d3aea1</action_type_parent>
-    <active>true</active>
-    <comment/>
-    <display_text/>
-    <flow>2d8bddd2dfa34a0289d732b5ae044c0b</flow>
-    <generation_source/>
-    <order>6</order>
-    <parent_ui_id>7e3dade2-8baf-4d8e-81c8-25ad54321e10</parent_ui_id>
-    <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
-    <ui_id>fd48d7d5-8a46-4b61-829a-4618b81f61cf</ui_id>
-    <updation_source/>
-    <values>H4sIAAAAAAAAA72RwUoDQQyGXyXMeSkUpMqCh0UKelSwF9EhzqR06u7MmMlsW5Z5d9kqUu3BPXlLQvLny5+nQXnsSNVK8LUlfUwq1WObx+JezxdXi4tLja5HzfSeKYmqlHUptnhY/dGWDLsojRHXk6rX2CaqVETGjoRY1YOSQ/y1vJTqm4nJBLYnPMNww4RCFgLDY7RjqOczk5nJSynnaBMmJlPaYHJHXrSzPzCPdOkEcxf4TfsglK5vH2C5J5NHcWDqHe1ggwmYtmRGLNm4BM3dqoEv38BmAgkwiqwDGwLXRTQCJnhD7NPsZXl/fui/7Jz+UOpii0L605JSnj8AvVUN2WoCAAA=</values>
-  </sys_hub_action_instance_v2>
-  <sys_hub_alias_mapping action="delete_multiple" query="source_id=71c67487f77742068525cfb4933c51a6"/>
-  <sys_hub_alias_mapping action="delete_multiple" query="source_id=c300b2c9fde3433cb19815ca776b3481"/>
-  <sys_hub_alias_mapping action="delete_multiple" query="source_id=4f906165b0ca46409646d5e4017c7642"/>
-  <sys_hub_alias_mapping action="delete_multiple" query="source_id=fd48d7d58a464b61829a4618b81f61cf"/>
-  <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=2d8bddd2dfa34a0289d732b5ae044c0b^sys_idNOT IN57b3d584b9b04fe7b702f4f6b9cc1b9d,7e3dade28baf4d8e81c825ad54321e10"/>
-  <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-    <sys_id>57b3d584b9b04fe7b702f4f6b9cc1b9d</sys_id>
-    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
-    <comment/>
-    <flow>2d8bddd2dfa34a0289d732b5ae044c0b</flow>
-    <logic_definition>af4e1945c3e232002841b63b12d3ae3e</logic_definition>
-    <order>3</order>
-    <ui_id>57b3d584-b9b0-4fe7-b702-f4f6b9cc1b9d</ui_id>
-    <values>H4sIAAAAAAAAA63QzWrDMAwH8HfROSnN3PUj0EOPvZdeRimKrGyijm1sJ6UYv/sI7aAPsJv0+wsJlMGNyY8pntwhRvm20H5dKpgwCHaG47PVTBLF2dNsRzvPv4KHxUHone4u3Hrj7u8mf3UGiwNDC+SsliTOwnzMjLPlTGq57D5oV/eaVb1Siuqu2W3r5pNws1l3arVtFuh9cBOaa0yYuJT9E1hDBVqiN/g4/99G+hGjA7/+4jHgwIkDtLlUECmITwdKMjG0PZrI5VJ+AQRXnXNUAQAA</values>
-  </sys_hub_flow_logic_instance_v2>
-  <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
-    <sys_id>7e3dade28baf4d8e81c825ad54321e10</sys_id>
-    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
-    <comment/>
-    <flow>2d8bddd2dfa34a0289d732b5ae044c0b</flow>
-    <logic_definition>666e5545c3e232002841b63b12d3ae99</logic_definition>
-    <order>5</order>
-    <ui_id>7e3dade2-8baf-4d8e-81c8-25ad54321e10</ui_id>
-    <values>H4sIAAAAAAAAA62QwW7CMBBE/2XPSUUwFIjUA8feEReE0Ga9KUsd27KdIGT536uoVOIDept5M9qVJoMbkx9TPLh9jPJloT2dK5gwCHaG46/VTBLF2cPMPu3cfwYPi4PQK7q78N0bd39l8qczWBwYWiBntSRxFuZnZpxZzqQWi25Ju7rXrOqVUlR3zW5bN2vCzea9U6tt84beBzehucSEiUv5CHxjSqyhAi3RG3wc/+8iXcXowM9dPAYcOHGANpcKIgXxaU9JJoa2RxO5nMsP6dvZalQBAAA=</values>
-  </sys_hub_flow_logic_instance_v2>
+    <sys_translated_text action="delete_multiple" query="documentkey=2d8bddd2dfa34a0289d732b5ae044c0b"/>
+    <sys_variable_value action="delete_multiple" query="document_key=2d8bddd2dfa34a0289d732b5ae044c0b"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=2d8bddd2dfa34a0289d732b5ae044c0b"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=2d8bddd2dfa34a0289d732b5ae044c0b"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=2d8bddd2dfa34a0289d732b5ae044c0b^sys_idNOT IN3dd476af93a107100b617d532bba102e,79d476af93a107100b617d532bba1046,add476af93a107100b617d532bba1008"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="AIVA Governance Approval - Workforce Displacement">2d8bddd2dfa34a0289d732b5ae044c0b</model>
+        <model_id>2d8bddd2dfa34a0289d732b5ae044c0b</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_2d8bddd2dfa34a0289d732b5ae044c0b</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>sangamesh</sys_created_by>
+        <sys_created_on>2026-06-24 12:55:18</sys_created_on>
+        <sys_id>3dd476af93a107100b617d532bba102e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sangamesh</sys_updated_by>
+        <sys_updated_on>2026-06-24 12:55:18</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=3dd476af93a107100b617d532bba102e"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="AIVA Governance Approval - Workforce Displacement">2d8bddd2dfa34a0289d732b5ae044c0b</model>
+        <model_id>2d8bddd2dfa34a0289d732b5ae044c0b</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_2d8bddd2dfa34a0289d732b5ae044c0b</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>sangamesh</sys_created_by>
+        <sys_created_on>2026-06-24 12:55:18</sys_created_on>
+        <sys_id>79d476af93a107100b617d532bba1046</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sangamesh</sys_updated_by>
+        <sys_updated_on>2026-06-24 12:55:18</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=79d476af93a107100b617d532bba1046"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="AIVA Governance Approval - Workforce Displacement">2d8bddd2dfa34a0289d732b5ae044c0b</model>
+        <model_id>2d8bddd2dfa34a0289d732b5ae044c0b</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_2d8bddd2dfa34a0289d732b5ae044c0b</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>sangamesh</sys_created_by>
+        <sys_created_on>2026-06-24 12:55:18</sys_created_on>
+        <sys_id>add476af93a107100b617d532bba1008</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sangamesh</sys_updated_by>
+        <sys_updated_on>2026-06-24 12:55:18</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=add476af93a107100b617d532bba1008"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=2d8bddd2dfa34a0289d732b5ae044c0b"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2d8bddd2dfa34a0289d732b5ae044c0b"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=2d8bddd2dfa34a0289d732b5ae044c0b^sys_idNOT INb6da85c7c3d74073be4f327a7cbaabe4"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="AIVA Governance Approval - Workforce Displacement">2d8bddd2dfa34a0289d732b5ae044c0b</flow>
+        <generation_source/>
+        <name>Created or Updated</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 22:21:52</sys_created_on>
+        <sys_id>b6da85c7c3d74073be4f327a7cbaabe4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 22:21:52</sys_updated_on>
+        <trigger_definition display_value="Created or Updated">a45d9180c32222002841b63b12d3aea7</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAAA71XXYvbOhD9K0JP90IKLVzaEujD7RcEelvobtuH0gpFGjuiykwqjZM1S/57kR1nbce7m71x9ilEGs2cOXNmJH+/lhxcnkOYYWSNBi7KOLNyKuVEej0HL6fyUs89yIl0yBBQ+8tyBXIqOS0r1Mu0Z2EFaAG5PmoW5Ax8cJHl9PuPiVxqtJoplHLKoYCJpGAhyOmzp08nsnKx8ycncq19kf5fqWfPXz7/54XSbq1VgN8FRE6hXFx5XX49zuy9A7/LJ5rgVvyvYbcGOc20j5CQOm8DYI1zpYNeAido15IH8uxh7VK03U6O4fNzgeITindXnCizojocDwmuSbyH3GuZNUwkZuVEZh9acQiFKUIAZKHRCmhichMzmy11DrXj7AI8GAa7Zyf7Etv//nMxOsx3CynbffBq5TC6L9sQGtpOCdpV085oQE6hQEWomoxbwmqg9oTUWz5dOPv63YroXkVo5uDmBUNMfrVdJ0nZptbbBwgu87QRMzxdZRrLfpkr3w6FxlIYQoYrHlFZc21+5YEKtLfFvbEQf1nIdOH57zGlTQHuBtC1eCRxp+DKYUvYHaZ66h7aO4/Eb3AN628cTb8htI4dDSm62YoPuphuZ9u0YjVcbyj8yigYUG650oZf1ZwaWALyzwDaezI6HVKRg2bIy1eBPES1cd6rOagAtjAwUKozuB6h0m1SB3gZqku30huNHBWT0taqlrv9xbUkC/5tq147FSiHq4Kj3LaqqQhb13ARQbUKnfw9YDR+WwCKC4jRUfplTg158pysjuua5tbY+JSuxKohKIgvEYKY3Rg2KEYcXkiojoHykfDJeZHMiRcHA5SCeE286JCQHiq3wDn1xfKQ+bpZAKq4l8O6m0Z/vHZWzzNYe4COkPB4z4cqQCXXSukH3ZF7Z0H5em+MmbtPuIgQGsdNDQ75P577ykcry/tr0cntLnh3EnaOWow2rIYedRSqB11KcMQpQAiKssEx5DKxIwCsmJeCFyAy8p42DvMKx5gfLEjpEumDeUsCiUV4FDj/rxcOR1JdvV5HdBbPOJB6mO4T6nhtcFlbnS5+QtO7F82pH6ltoWm/0WU8ULzLKqXtPo19mTSHNUdjRYY1hE5fv6cgqkVRrKzmMbMs0P0uQJmFxhziQVBtFqI2EbXJI7VO84RsHsqtrtmVvdc23dXx+2YA0JCot9sffwDxHKZwnBMAAA==</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create_or_update</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=2d8bddd2dfa34a0289d732b5ae044c0b^sys_idNOT IN4f906165b0ca46409646d5e4017c7642,71c67487f77742068525cfb4933c51a6,c300b2c9fde3433cb19815ca776b3481,fd48d7d58a464b61829a4618b81f61cf"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="">f9d01dd2c31332002841b63b12d3aea1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="AIVA Governance Approval - Workforce Displacement">2d8bddd2dfa34a0289d732b5ae044c0b</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>57b3d584-b9b0-4fe7-b702-f4f6b9cc1b9d</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 22:21:52</sys_created_on>
+        <sys_id>4f906165b0ca46409646d5e4017c7642</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 22:21:52</sys_updated_on>
+        <ui_id>4f906165-b0ca-4640-9646-d5e4017c7642</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAAA7WRQUsEMQyF/0roeRhYkF0Z8CCyoEcX9SJaYhvXYjutaWZ2h6H/XWYFWd2Dc/GWhJe875HHUbUYSDVK8MWTPjSV6tF303CvF8vz5dlKo+tRM310lEVVyrqcPA4Pf8iyYZfk0ojrSTWv6DNVKiFjICFWzahkSL/MS6m+mZhMZHvEM45XTChkITLcJzuVelGbjplaKeUUbcbGbEobTReoFe3sD8wDXT7C3EV+120UyhfXG1jvyXTTccCUOPboYcvYCtkabu5ACAMEHCBxNEQWdk7eAHOmnCe3+nl9e5rrPyzmv4tC8iikvwKX8vQJHhOrEkgCAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4f906165b0ca46409646d5e4017c7642"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="">9d09f99587003300663ca1bb36cb0ba3</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="AIVA Governance Approval - Workforce Displacement">2d8bddd2dfa34a0289d732b5ae044c0b</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 22:21:52</sys_created_on>
+        <sys_id>71c67487f77742068525cfb4933c51a6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 22:21:52</sys_updated_on>
+        <ui_id>71c67487-f777-4206-8525-cfb4933c51a6</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAAA5WRsWrDQAyGX6Vo9hMYMnQodO6QJRShynIjOPsOSRdiQt69xJTUrT2kq/4ffZ/uDhcYaRBowbMFxlQEGjhRqvcZOUMDnXpJNO3XibNpiWcOPQm0PSWXBgoZDRJi0F5g3toCH7OywPXa3KGcx05D8+gL6i3bvb49vZyF67x1hd+qPO7xA126BH2kX8dPjtXF8NNyLRtP8Dd/WGAm4YxdCmiPQ02hJQmacLbOkUywz3XskPimvPCrLtireXyX14Ybjf9/1vsXpxzxxyMCAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=71c67487f77742068525cfb4933c51a6"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="">f8f2e9920b10030085c083eb37673abd</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="AIVA Governance Approval - Workforce Displacement">2d8bddd2dfa34a0289d732b5ae044c0b</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 22:21:52</sys_created_on>
+        <sys_id>c300b2c9fde3433cb19815ca776b3481</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 22:21:52</sys_updated_on>
+        <ui_id>c300b2c9-fde3-433c-b198-15ca776b3481</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAAA81TXW/TMBT9K5af24psbVPyFk0IeJ1gL+tk3dq3q8G1w7WdLYry31HSkmVkg0iTEI/385xzP25rbuGIPONQFORKMGKv0Sg+4yWYOAzwGVfaFwaqm3HES9JFyGXQJfJsD8bjjBdAcMSAxLOah6poa7ruosNsmlmP/s1Fsn8AFwftg6PqdRKDjLeSURGFgoADHvWWgwza2S3Pttw6i1s+2/I2S7TNOjfIEMH0gc5XNyc7EpzLk4H5VKug8l2mlwdU0Zy8zzzCwA7N2d+MJ/Ffcpy8i77Dia/+bSf9mqWzSre8/GA9eRdFn9vq421dp4lcp8tNOt+naTpfXrxbzzeri9Vc7nfL95eXcpXAenGN0pFqmrvxJN/abrLoXhVFg/6Z4AA7M7zAR5GsN+tlKkCXIAh/RPRhTP21tMmUOtzxT1Anb/gR9RUhBFTMEftatFtTIlnISIQ2NC/d598rJrNUTsYj2iC0evlMCME7O+D76Zp9eEQZ29bsVxprB6QJVca+HLRn+eebnJ2HxrQtnSnRswdH3/eOJLKTIoktNHvQ4cAKA9aiYuQMMkIVuw9cjNX/c/zpnxdI23veNHc/AbSebuYOBgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=c300b2c9fde3433cb19815ca776b3481"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="">f9d01dd2c31332002841b63b12d3aea1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="AIVA Governance Approval - Workforce Displacement">2d8bddd2dfa34a0289d732b5ae044c0b</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>7e3dade2-8baf-4d8e-81c8-25ad54321e10</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 22:21:52</sys_created_on>
+        <sys_id>fd48d7d58a464b61829a4618b81f61cf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 22:21:52</sys_updated_on>
+        <ui_id>fd48d7d5-8a46-4b61-829a-4618b81f61cf</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAAA72RwUoDQQyGXyXMeSkUpMqCh0UKelSwF9EhzqR06u7MmMlsW5Z5d9kqUu3BPXlLQvLny5+nQXnsSNVK8LUlfUwq1WObx+JezxdXi4tLja5HzfSeKYmqlHUptnhY/dGWDLsojRHXk6rX2CaqVETGjoRY1YOSQ/y1vJTqm4nJBLYnPMNww4RCFgLDY7RjqOczk5nJSynnaBMmJlPaYHJHXrSzPzCPdOkEcxf4TfsglK5vH2C5J5NHcWDqHe1ggwmYtmRGLNm4BM3dqoEv38BmAgkwiqwDGwLXRTQCJnhD7NPsZXl/fui/7Jz+UOpii0L605JSnj8AvVUN2WoCAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=fd48d7d58a464b61829a4618b81f61cf"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=2d8bddd2dfa34a0289d732b5ae044c0b"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=2d8bddd2dfa34a0289d732b5ae044c0b^sys_idNOT IN57b3d584b9b04fe7b702f4f6b9cc1b9d,7e3dade28baf4d8e81c825ad54321e10"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block/>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="AIVA Governance Approval - Workforce Displacement">2d8bddd2dfa34a0289d732b5ae044c0b</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 22:21:52</sys_created_on>
+        <sys_id>57b3d584b9b04fe7b702f4f6b9cc1b9d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 22:21:52</sys_updated_on>
+        <ui_id>57b3d584-b9b0-4fe7-b702-f4f6b9cc1b9d</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAAA63QzWrDMAwH8HfROSnN3PUj0EOPvZdeRimKrGyijm1sJ6UYv/sI7aAPsJv0+wsJlMGNyY8pntwhRvm20H5dKpgwCHaG47PVTBLF2dNsRzvPv4KHxUHone4u3Hrj7u8mf3UGiwNDC+SsliTOwnzMjLPlTGq57D5oV/eaVb1Siuqu2W3r5pNws1l3arVtFuh9cBOaa0yYuJT9E1hDBVqiN/g4/99G+hGjA7/+4jHgwIkDtLlUECmITwdKMjG0PZrI5VJ+AQRXnXNUAQAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block/>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="AIVA Governance Approval - Workforce Displacement">2d8bddd2dfa34a0289d732b5ae044c0b</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 22:21:52</sys_created_on>
+        <sys_id>7e3dade28baf4d8e81c825ad54321e10</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 22:21:52</sys_updated_on>
+        <ui_id>7e3dade2-8baf-4d8e-81c8-25ad54321e10</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAAA62QwW7CMBBE/2XPSUUwFIjUA8feEReE0Ga9KUsd27KdIGT536uoVOIDept5M9qVJoMbkx9TPLh9jPJloT2dK5gwCHaG46/VTBLF2cPMPu3cfwYPi4PQK7q78N0bd39l8qczWBwYWiBntSRxFuZnZpxZzqQWi25Ju7rXrOqVUlR3zW5bN2vCzea9U6tt84beBzehucSEiUv5CHxjSqyhAi3RG3wc/+8iXcXowM9dPAYcOHGANpcKIgXxaU9JJoa2RxO5nMsP6dvZalQBAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=2d8bddd2dfa34a0289d732b5ae044c0b"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=2d8bddd2dfa34a0289d732b5ae044c0b"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_2d8bddd2dfa34a0289d732b5ae044c0b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>sangamesh</sys_created_by>
+        <sys_created_on>2026-06-24 12:55:19</sys_created_on>
+        <sys_id>35d476af93a107100b617d532bba104e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sangamesh</sys_updated_by>
+        <sys_updated_on>2026-06-24 12:55:19</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_2d8bddd2dfa34a0289d732b5ae044c0b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>sangamesh</sys_created_by>
+        <sys_created_on>2026-06-24 12:55:18</sys_created_on>
+        <sys_id>3dd476af93a107100b617d532bba1035</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sangamesh</sys_updated_by>
+        <sys_updated_on>2026-06-24 12:55:18</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_2d8bddd2dfa34a0289d732b5ae044c0b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>sangamesh</sys_created_by>
+        <sys_created_on>2026-06-24 12:55:18</sys_created_on>
+        <sys_id>69d476af93a107100b617d532bba1029</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sangamesh</sys_updated_by>
+        <sys_updated_on>2026-06-24 12:55:18</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_2d8bddd2dfa34a0289d732b5ae044c0b"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_2d8bddd2dfa34a0289d732b5ae044c0b"/>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=2d8bddd2dfa34a0289d732b5ae044c0b"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=2d8bddd2dfa34a0289d732b5ae044c0b"/>
 </record_update>

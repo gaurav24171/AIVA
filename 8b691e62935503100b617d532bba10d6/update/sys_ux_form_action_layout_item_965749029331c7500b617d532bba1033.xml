@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_form_action_layout_item">
+    <sys_ux_form_action_layout_item action="INSERT_OR_UPDATE">
+        <action display_value="Generate Assessment">d65749029331c7500b617d532bba102d</action>
+        <active>true</active>
+        <animate_icon>false</animate_icon>
+        <color>secondary</color>
+        <description/>
+        <icon/>
+        <item_type>action</item_type>
+        <label>Generate Assessment</label>
+        <layout_group/>
+        <name>Generate Assessment</name>
+        <order>100</order>
+        <overflow>false</overflow>
+        <sys_class_name>sys_ux_form_action_layout_item</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-01 23:21:45</sys_created_on>
+        <sys_id>965749029331c7500b617d532bba1033</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Generate Assessment</sys_name>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>sys_ux_form_action_layout_item_965749029331c7500b617d532bba1033</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-01 23:21:45</sys_updated_on>
+        <table>x_168647_aiva_request</table>
+    </sys_ux_form_action_layout_item>
+</record_update>

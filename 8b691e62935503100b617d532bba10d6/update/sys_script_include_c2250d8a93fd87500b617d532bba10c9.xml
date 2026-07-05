@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_168647_aiva.AIVAGenAIAssistant</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>AIVAGenAIAssistant</name>
+        <sandbox_callable>true</sandbox_callable>
+        <script><![CDATA[var AIVAGenAIAssistant = Class.create();
+AIVAGenAIAssistant.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    generateAssessmentAjax: function() {
+        var recordId = this.getParameter('sysparm_record_id');
+        return this.generateAssessment(recordId);
+    },
+
+    generateAssessment: function(recordId) {
+        var aivaGr = new GlideRecord('x_168647_aiva_request'); // Use your actual table name
+
+        if (aivaGr.get(recordId)) {
+            var prompt = this._getArchitectPersona() + this._getAssessmentPrompt(aivaGr);
+
+            try {
+                var rm = new sn_ws.RESTMessageV2('AIVA LLM Integration', 'POST');
+                rm.setStringParameterNoEscape('YOUR_API_KEY', this._getApiKey());
+
+                // Escape special characters to ensure valid JSON payload
+                var safePrompt = JSON.stringify(prompt).slice(1, -1);
+                rm.setStringParameterNoEscape('prompt', safePrompt);
+
+                var response = rm.execute();
+                var responseBody = response.getBody();
+                var httpStatus = response.getStatusCode();
+
+                if (httpStatus == 200) {
+                    var generatedText = this._extractAndCleanText(responseBody);
+                    this._updateRecordValue(aivaGr, 'ai_pre_assessment', generatedText);
+                    return "Success";
+                } else {
+                    gs.error("AIVA LLM Error: " + responseBody);
+                    this._updateRecordValue(aivaGr, 'ai_pre_assessment', 'Failed to generate assessment. Check system logs.');
+                    return "Error: " + httpStatus;
+                }
+            } catch (ex) {
+                gs.error("AIVA Script Error: " + ex.message);
+                return "Exception: " + ex.message;
+            }
+        }
+        return "Record not found.";
+    },
+
+    // ========================================================================
+    // Multi-Turn Chat History from UI Component
+    // ========================================================================
+    generateAssessmentFromHistory: function(recordId, historyArray) {
+        try {
+            var geminiPayload = {
+                contents: historyArray,
+                systemInstruction: {
+                    parts: [{
+                        text: this._getArchitectPersona() + "You are an expert Enterprise IT Architect. Please analyze the following manual business process and provide an automation assessment. Output the entire response strictly in valid HTML5. Do not use Markdown formatting, and do not include any conversational text outside of the HTML structure."
+                    }]
+                }
+            };
+
+            return this._callGeminiAPI(geminiPayload);
+        } catch (ex) {
+            gs.error("AIVA Chat Script Error: " + ex.message);
+            return "Exception: " + ex.message;
+        }
+    },
+
+    // ========================================================================
+    // Multi-Turn Chat History & Work Notes Storage
+    // ========================================================================
+    getChatHistory: function(recordId) {
+        var history = [];
+        var grJournal = new GlideRecord('sys_journal_field');
+        grJournal.addQuery('element', 'work_notes');
+        grJournal.addQuery('element_id', recordId);
+        grJournal.orderBy('sys_created_on'); // Oldest first
+        grJournal.query();
+
+        while (grJournal.next()) {
+            var note = grJournal.getValue('value');
+            // strictly identify chat notes based on prefixes
+            if (note.indexOf('User to AI Agent:') === 0) {
+                history.push({
+                    role: 'user',
+                    parts: [{
+                        text: note.replace('User to AI Agent:', '').trim()
+                    }]
+                });
+            } else if (note.indexOf('AI Agent to User:') === 0) {
+                history.push({
+                    role: 'model',
+                    parts: [{
+                        text: note.replace('AI Agent to User:', '').trim()
+                    }]
+                });
+            }
+        }
+        return history;
+    },
+
+    processChat: function(recordId, userMessage) {
+        try {
+            var aivaGr = new GlideRecord('x_168647_aiva_request');
+            if (!aivaGr.get(recordId)) return "Error: Record not found.";
+
+            // 1. Write the User's message to work_notes immediately
+            this._updateWorkNotes(aivaGr, "User to AI Agent:\n" + userMessage);
+
+            // 2. Retrieve history from work_notes
+            var history = this.getChatHistory(recordId);
+
+            // 3. CONTEXT SEEDING
+            if (history.length === 1) {
+                var prompt = this._getAssessmentPrompt(aivaGr);
+                var preAssessment = aivaGr.getValue('ai_pre_assessment') || "No prior assessment generated.";
+
+                // Unshift adds these to the very beginning of the array
+                history.unshift({
+                    role: 'model',
+                    parts: [{
+                        text: preAssessment
+                    }]
+                });
+                history.unshift({
+                    role: 'user',
+                    parts: [{
+                        text: prompt
+                    }]
+                });
+            }
+
+            // 4. Call Gemini
+            var geminiPayload = {
+                contents: history,
+                systemInstruction: {
+                    parts: [{
+                        text: this._getArchitectPersona()
+                    }]
+                }
+            };
+
+            var agentReply = this._callGeminiAPI(geminiPayload);
+
+            // 5. Write the Agent's response to work_notes (only if successful)
+            if (agentReply.indexOf("Error:") === -1 && agentReply.indexOf("Exception:") === -1) {
+                this._updateWorkNotes(aivaGr, "AI Agent to User:\n" + agentReply);
+            }
+
+            return agentReply;
+        } catch (ex) {
+            gs.error("AIVA Chat Script Error: " + ex.message);
+            return "Exception: " + ex.message;
+        }
+    },
+
+	
+
+    generateArchitectureComparison: function() { 
+        var aivaGr = new GlideRecord('x_168647_aiva_request');
+		var recordId = this.getParameter('sysparm_record_id');
+
+        if (aivaGr.get(recordId)) {
+            var prompt = this._getArchitectPersona() + this._getArchitectureComparisonPrompt(aivaGr);
+
+            try {
+                var rm = new sn_ws.RESTMessageV2('AIVA LLM Integration', 'POST');
+                rm.setStringParameterNoEscape('YOUR_API_KEY', this._getApiKey());
+
+                // Escape special characters to ensure valid JSON payload
+                var safePrompt = JSON.stringify(prompt).slice(1, -1);
+                rm.setStringParameterNoEscape('prompt', safePrompt);
+
+                var response = rm.execute();
+                var responseBody = response.getBody();
+                var httpStatus = response.getStatusCode();
+
+                if (httpStatus == 200) {
+                    var generatedText = this._extractAndCleanText(responseBody);
+
+                    try {
+                        // Parse the JSON object returned by the LLM
+                        var archData = JSON.parse(generatedText);
+                        
+                        // Update the two separate fields
+                        this._updateRecordValue(aivaGr, 'current_architecture', archData.current_html);
+                        this._updateRecordValue(aivaGr, 'proposed_architecture', archData.proposed_html);
+                        
+                        return "Success";
+                    } catch (parseError) {
+                        gs.error("AIVA Architecture Parse Error: " + parseError.message + "\nRaw Text: " + generatedText);
+                        return "Error: AI response could not be parsed into separate fields.";
+                    }
+
+                } else {
+                    gs.error("AIVA Architecture Comparison Error: " + responseBody);
+                    return "Error: " + httpStatus;
+                }
+            } catch (ex) {
+                gs.error("AIVA Architecture Comparison Script Error: " + ex.message);
+                return "Exception: " + ex.message;
+            }
+        }
+        return "Record not found.";
+    },
+
+    // ========================================================================
+    // HELPER METHODS (Internal Logic & DRY Implementation)
+    // ========================================================================
+
+    _getArchitectPersona: function() {
+        return "You are an expert Enterprise IT Architect. " +
+            "CRITICAL INSTRUCTION: You must output your ENTIRE response strictly in valid HTML5. " +
+            "Do NOT use Markdown formatting (no asterisks, no hashes). " +
+            "Use clean, scannable HTML tags like <h3>, <h4>, <p>, <ul>, <li>, and <strong> to structure your response. " +
+            "Do not include any conversational text outside of the HTML structure. ";
+    },
+
+    _getAssessmentPrompt: function(aivaGr) {
+        var prompt = "You are an expert Enterprise IT Architect. Please analyze the following manual business process and provide an automation assessment. Output the entire response strictly in valid HTML5. Do not use Markdown formatting, and do not include any conversational text outside of the HTML structure.\n\n";
+        prompt += "High-Level Objective: " + (aivaGr.getValue('process_objective') || "Not provided") + "\n";
+        prompt += "Current Manual Process: " + (aivaGr.getValue('current_fulfillment') || "Not provided") + "\n";
+        prompt += "Pain Points: " + (aivaGr.getValue('pain_points') || "Not provided") + "\n\n";
+        prompt += "Provide your response FORMATTED ENTIRELY IN HTML using <p>, <b>, <ul>, and <li> tags. Do not use Markdown asterisks or backticks. Use this exact structure:\n\n";
+        prompt += "<p><b>Process Summary:</b> [1 sentence summary]</p>\n";
+        prompt += "<p><b>Automation Recommendation:</b> [Recommend either Generative AI, Legacy RPA, or a Hybrid approach and explain why in 2 sentences]</p>\n";
+        prompt += "<p><b>Key Risks:</b></p>\n";
+        prompt += "<ul>\n";
+        prompt += "  <li><b>[Risk 1 Title]:</b> [Risk 1 Description]</li>\n";
+        prompt += "  <li><b>[Risk 2 Title]:</b> [Risk 2 Description]</li>\n";
+        prompt += "</ul>";
+        return prompt;
+    },
+
+    _getApiKey: function() {
+        return gs.getProperty('x_168647_aiva.aiva_api_key');
+    },
+
+    _callGeminiAPI: function(payload) {
+        var rm = new sn_ws.RESTMessageV2('AIVA LLM Integration', 'POST');
+        rm.setStringParameterNoEscape('YOUR_API_KEY', this._getApiKey());
+        rm.setRequestHeader('Content-Type', 'application/json');
+        rm.setRequestBody(JSON.stringify(payload));
+
+        var restResponse = rm.execute();
+        var httpStatus = restResponse.getStatusCode();
+        var responseBody = restResponse.getBody();
+
+        if (httpStatus === 200) {
+            return this._extractAndCleanText(responseBody);
+        } else {
+            gs.error("AIVA Chat Integration Error: " + responseBody);
+            return "Error: Unable to connect to architectural agent. Status: " + httpStatus;
+        }
+    },
+
+    _getArchitectureComparisonPrompt: function(aivaGr) {
+        var currentArch = aivaGr.getValue('current_architecture') || "Not provided";
+        var proposedArch = aivaGr.getValue('proposed_architecture') || "Not provided";
+
+        var prompt = "Please analyze the following Current and Proposed Solution Architectures.\n\n";
+        prompt += "Current Architecture: " + currentArch + "\n";
+        prompt += "Proposed Architecture: " + proposedArch + "\n\n";
+        
+        prompt += "CRITICAL INSTRUCTION: You must represent these architectures as visual flow diagrams. Because standard HTML divs are too linear, you MUST use inline <svg> within HTML to draw cross-connected flow diagrams. ";
+        prompt += "Include nodes (styled <rect> elements with embedded <text>) for components, and use <path> or <line> elements with arrowheads (using <marker>) to show complex, multi-directional data flows and cross-connections. ";
+        prompt += "Ensure the SVG has a responsive 'viewBox' (e.g., viewBox='0 0 800 600'). Style the nodes to look professional (e.g., #f4f4f9 fill, #4a4a4a borders). Space the nodes out logically. ";
+        
+        // --- NEW: Hardened JSON Instructions ---
+        prompt += "OUTPUT FORMAT: You MUST return your response as a raw JSON object with exactly two keys: 'current_html' and 'proposed_html'. ";
+        prompt += "CRITICAL JSON RULES: ";
+        prompt += "1. MINIFY the HTML/SVG. Do not include any literal newlines, carriage returns, or tab characters inside the string values. The HTML must be on a single continuous line. ";
+        prompt += "2. Use ONLY single quotes (') for all HTML, SVG, and CSS attributes. Do NOT use double quotes (\") anywhere inside the HTML values to avoid breaking the JSON parser. ";
+        prompt += "3. Do not wrap the JSON in Markdown backticks (e.g., no ```json). Do not include any conversational text outside of the JSON. ";
+        prompt += "Example format: {\"current_html\": \"<div style='color: #000;'><svg>...</svg></div>\", \"proposed_html\": \"<div style='color: #000;'><svg>...</svg></div>\"}";
+
+        return prompt;
+    },
+
+    _extractAndCleanText: function(responseBody) {
+        var parsedData = JSON.parse(responseBody);
+        var text = parsedData.candidates[0].content.parts[0].text;
+        return text.replace(/```(json|html)?/gi, '').replace(/```/g, '').trim();
+    },
+
+    _updateRecordValue: function(gr, fieldName, value) {
+        gr.setValue(fieldName, value);
+        gr.update();
+    },
+
+    _updateWorkNotes: function(gr, noteText) {
+        gr.work_notes = noteText;
+        gr.update();
+    },
+
+    type: 'AIVAGenAIAssistant'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-01 23:12:39</sys_created_on>
+        <sys_id>c2250d8a93fd87500b617d532bba10c9</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_name>AIVAGenAIAssistant</sys_name>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>sys_script_include_c2250d8a93fd87500b617d532bba10c9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-05 12:01:45</sys_updated_on>
+    </sys_script_include>
+</record_update>

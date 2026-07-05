@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
-  <sys_user_role action="INSERT_OR_UPDATE">
-    <sys_id>592461e8f6654a0f8905c5ec2aac93f7</sys_id>
-    <sys_scope display_value="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_scope>
-    <sys_update_name>sys_user_role_592461e8f6654a0f8905c5ec2aac93f7</sys_update_name>
-    <assignable_by/>
-    <can_delegate>true</can_delegate>
-    <description>Workspace access role for AIVA assessors</description>
-    <elevated_privilege>false</elevated_privilege>
-    <grantable>true</grantable>
-    <name>x_168647_aiva.ws_assessor</name>
-    <scoped_admin>false</scoped_admin>
-    <suffix>ws_assessor</suffix>
-  </sys_user_role>
+    <sys_user_role action="INSERT_OR_UPDATE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description>Workspace access role for AIVA assessors</description>
+        <elevated_privilege>false</elevated_privilege>
+        <federated_id>kcBE2HVLeHCsC8bmT8YnpeCGvSq+txF8VrLMrE2hbYg=</federated_id>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_168647_aiva.ws_assessor</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix>ws_assessor</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-08 22:21:54</sys_created_on>
+        <sys_id>592461e8f6654a0f8905c5ec2aac93f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_168647_aiva.ws_assessor</sys_name>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>sys_user_role_592461e8f6654a0f8905c5ec2aac93f7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-08 22:21:54</sys_updated_on>
+    </sys_user_role>
 </record_update>

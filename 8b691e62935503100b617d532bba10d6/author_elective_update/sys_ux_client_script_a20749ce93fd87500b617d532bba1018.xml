@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="DELETE">
+        <controller_preset/>
+        <includes/>
+        <macroponent display_value="Record Default">fa397b49d2d941d7988ae201dc6db5a5</macroponent>
+        <name>rich_text_1/html</name>
+        <preset/>
+        <required_translations>[]</required_translations>
+        <script><![CDATA[/**
+  * @param {params} params
+  * @param {api} params.api
+  * @param {TransformApiHelpers} params.helpers
+  */
+function evaluateProperty({api, helpers}) {
+	return api.data.record?.form?.fields?.year_one_net_roi?.ai_pre_assessment;
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-01 23:39:19</sys_created_on>
+        <sys_id>a20749ce93fd87500b617d532bba1018</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>rich_text_1/html</sys_name>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>sys_ux_client_script_a20749ce93fd87500b617d532bba1018</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-01 23:39:19</sys_updated_on>
+        <target>macroponent</target>
+        <type>transform</type>
+    </sys_ux_client_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AIVA">8b691e62935503100b617d532bba10d6</application>
+        <file_path/>
+        <instance_id>52f8c521fbe80f980921f633beefdc04</instance_id>
+        <instance_name>dev393946</instance_name>
+        <name>sys_ux_client_script_a20749ce93fd87500b617d532bba1018</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ux_client_script"&gt;&lt;sys_ux_client_script action="INSERT_OR_UPDATE"&gt;&lt;controller_preset/&gt;&lt;includes/&gt;&lt;macroponent display_value="Record Default"&gt;fa397b49d2d941d7988ae201dc6db5a5&lt;/macroponent&gt;&lt;name&gt;rich_text_1/html&lt;/name&gt;&lt;preset/&gt;&lt;required_translations&gt;[]&lt;/required_translations&gt;&lt;script&gt;&lt;![CDATA[/**
+  * @param {params} params
+  * @param {api} params.api
+  * @param {TransformApiHelpers} params.helpers
+  */
+function evaluateProperty({api, helpers}) {
+	return api.data.record?.form?.fields?.year_one_net_roi?.ai_pre_assessment;
+}]]&gt;&lt;/script&gt;&lt;script_api_version&gt;2.0.0&lt;/script_api_version&gt;&lt;sys_class_name&gt;sys_ux_client_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-07-01 23:39:19&lt;/sys_created_on&gt;&lt;sys_id&gt;a20749ce93fd87500b617d532bba1018&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;rich_text_1/html&lt;/sys_name&gt;&lt;sys_package display_value="AIVA" source="x_168647_aiva"&gt;8b691e62935503100b617d532bba10d6&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="AIVA"&gt;8b691e62935503100b617d532bba10d6&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ux_client_script_a20749ce93fd87500b617d532bba1018&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-07-01 23:39:19&lt;/sys_updated_on&gt;&lt;target&gt;macroponent&lt;/target&gt;&lt;type&gt;transform&lt;/type&gt;&lt;/sys_ux_client_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-138373347</payload_hash>
+        <record_name>rich_text_1/html</record_name>
+        <reverted_from/>
+        <source>17695e62935503100b617d532bba1005</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-01 23:39:19</sys_created_on>
+        <sys_id>775b854a9331c7500b617d532bba104d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19f200d23bc0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-01 23:39:19</sys_updated_on>
+        <type>UX Client Script</type>
+        <update_guid>f35b854a4831c750da84785dfe4d284c</update_guid>
+        <update_guid_history>f35b854a4831c750da84785dfe4d284c:-138373347</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-01 23:49:37</sys_created_on>
+        <sys_db_object display_value="" name="sys_ux_client_script">sys_ux_client_script</sys_db_object>
+        <sys_id>0c441d4eaa0a4c9c81ff0db2cb129ea4</sys_id>
+        <sys_metadata>a20749ce93fd87500b617d532bba1018</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>rich_text_1/html</sys_name>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_scope_delete display_value="">04b1cfc1fbd6492080c87e17d2833100</sys_scope_delete>
+        <sys_update_name>sys_ux_client_script_a20749ce93fd87500b617d532bba1018</sys_update_name>
+        <sys_update_version display_value="sys_ux_client_script_a20749ce93fd87500b617d532bba1018">775b854a9331c7500b617d532bba104d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-01 23:49:37</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

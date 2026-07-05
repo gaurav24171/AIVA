@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_header_footer">
+    <sp_header_footer action="INSERT_OR_UPDATE">
+        <category>standard</category>
+        <client_script><![CDATA[api.controller =  function ($rootScope, $scope, snRecordWatcher, spUtil, $location, $uibModal, cabrillo, $timeout, $window, i18n, spAriaUtil, $element) {
+
+	$scope.logoText = i18n.format(i18n.getMessage('Go to {0} Homepage'), $scope.portal.title);
+	$scope.collapse = function() {
+		$rootScope.$emit('sp-navbar-collapse');
+	}
+
+	$scope.avatarProfile = {
+		userID: $scope.user.sys_id,
+		name: $scope.user.name,
+		initials: $window.NOW.user_initials
+	};
+
+	if ($window.NOW.user_avatar) {
+		$scope.avatarProfile.userImage = $window.NOW.user_avatar;
+	}
+
+	if (cabrillo.isNative()) {
+		if ($window.innerWidth < 767) {
+			$scope.isViewNative = true;
+		} else {
+			$scope.isViewNativeTablet = true;
+		}
+	}
+
+
+	$scope.openPopUp = function() {
+		var url = "$chat_support.do?queueID=" + $scope.data.connect_support_queue_id;
+		var popup = window.open (url, "popup", "width=900, height=600");
+	};
+
+	$scope.openLogin = function () {
+		$scope.modalInstance = $uibModal.open({
+			templateUrl: 'modalLogin',
+			scope: $scope
+		});
+
+		var pageRoot = angular.element('.sp-page-root');
+		$scope.modalInstance.rendered.then(function() {
+			var $uibModalStack = $injector.get('$uibModalStack');
+			var modalObj = $uibModalStack.getTop();
+			var modal = modalObj.value.modalDomEl;
+
+			modal.attr('aria-label', modal.find('.panel-title').html());
+			modal.attr('aria-modal', 'true');
+			pageRoot.attr('aria-hidden', 'true');
+		});
+
+		$scope.modalInstance.closed.then(function() {
+			pageRoot.attr('aria-hidden', 'false');
+		});
+	};
+
+	var mdScreenSize = isMDScreenSize();
+	$scope.showSMAvatar = isMDScreenSize();
+	$scope.showAvatar = !isMDScreenSize();
+
+	$scope.isAgentChatConfigured = g_has_agent_chat_config;
+
+	var nav = document.getElementById('responsiveNav');
+
+	function isMDScreenSize() {
+		if (nav)
+			return nav.classList.contains('responsive-tablet');
+		else return false;
+	}
+
+	function updateResponsiveClasses(width) {
+		if (width <= 992) {
+			nav.classList.add('responsive-tablet');
+			nav.classList.remove('responsive-desktop');
+		} else {
+			nav.classList.add('responsive-desktop');
+			nav.classList.remove('responsive-tablet');
+		}
+		if(mdScreenSize !== isMDScreenSize() && (!$scope.showSMAvatar || !$scope.showAvatar)){
+			$scope.showSMAvatar = true;
+			$scope.showAvatar = true;
+		}
+	}
+
+	var observer = new ResizeObserver(function(entries) {
+		if (entries && entries[0]) {
+			updateResponsiveClasses(entries[0].contentRect.width);
+		}
+	});
+	observer.observe(nav);
+
+	$rootScope.$on('sp.avatar_changed', function(evt, obj) {
+		$scope.userID = "";
+		$scope.newAvatarId = obj.newAvatarId;
+		$timeout(function(){
+			$scope.userID = $scope.user.sys_id;
+			$("#profile-dropdown .sub-avatar").css({"background-image": 'url("' + $scope.newAvatarId + '.iix?t=small")', "color": "transparent"});
+		});
+	});
+
+	$scope.isHomepage = function() {
+		if (!$scope.page.id)
+			return true;
+
+		if ($scope.page.id == $scope.portal.homepage_dv)
+			return true;
+
+		return false;
+	};
+	
+	// Initialize keyboard navigation for header dropdowns after DOM is ready
+	$timeout(function() {
+		function isMDScreenSize() {
+			return window.matchMedia('(max-width: 992px)').matches;
+		}
+		
+		var navbarElement = $element.find('.navbar');
+		if (navbarElement.length > 0) {
+			spAriaUtil.initDropdownKeyboardNav(navbarElement, {
+				checkMdScreenSize: true,
+				isMDScreenSize: isMDScreenSize
+			});
+		}
+	});
+
+};
+		]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* --- NEW THEME OVERRIDES --- */&#13;
+@import url('https://fonts.googleapis.com/css2?family=Michroma&amp;display=swap');&#13;
+&#13;
+.navbar {&#13;
+  transition: 250ms opacity ease-in-out;&#13;
+  -webkit-transition: 250ms opacity ease-in-out;&#13;
+  border: 0;&#13;
+  /* Removed the standard border-bottom */&#13;
+  background-color: transparent !important; /* Force transparent background */&#13;
+}&#13;
+&#13;
+/* Force header text, brand, and mobile hamburger icons to be white */&#13;
+/* Force the portal title to be a single line and use Michroma */&#13;
+.navbar-inverse .navbar-brand {&#13;
+  position: relative; &#13;
+  z-index: 1; /* Ensures the text and container stay on top */&#13;
+}&#13;
+/* Style and position the background SVG sparkle */&#13;
+.ai-sparkle-bg {&#13;
+  position: absolute;&#13;
+  top: 50%;&#13;
+  left: 105%; /* Adjust this to move it left/right relative to the text */&#13;
+  transform: translate(-50%, -50%); /* Centers the SVG */&#13;
+  width: 55px; /* Size of the sparkles */&#13;
+  height: 55px;&#13;
+  z-index: -1; /* Pushes it behind the text */&#13;
+  opacity: 0.6; /* Adjust this to make the gradient brighter or softer */&#13;
+  pointer-events: none; /* Ensures the link is still clickable */&#13;
+}&#13;
+.navbar-inverse .navbar-brand span {&#13;
+  font-family: 'Michroma', sans-serif !important;&#13;
+  color: #ffffff !important;&#13;
+  white-space: nowrap !important; /* Prevents the text from wrapping */&#13;
+  width: auto !important; /* Overrides the default calc(100% - 3rem) constraint */&#13;
+  font-size: 18px; /* Adjust this value if the font is too large/small */&#13;
+}&#13;
+.navbar-inverse .navbar-brand span,&#13;
+.navbar-inverse .navbar-nav &gt; li &gt; a,&#13;
+.navbar-inverse .navbar-text {&#13;
+  color: #ffffff !important;&#13;
+}&#13;
+&#13;
+/* Make the hamburger menu lines white */&#13;
+.navbar-inverse .navbar-toggle .icon-bar {&#13;
+  background-color: #ffffff !important; &#13;
+}&#13;
+&#13;
+/* Soft hover effect for links */&#13;
+.navbar-inverse .navbar-nav &gt; li &gt; a:hover {&#13;
+  color: #e0e0e0 !important;&#13;
+}&#13;
+&#13;
+/* Style the profile dropdown to match the dark space theme */&#13;
+.dropdown-menu {&#13;
+  background-color: #24243e; /* Dark purple from your background */&#13;
+  border: 1px solid rgba(255, 255, 255, 0.1);&#13;
+}&#13;
+.dropdown-menu &gt; li &gt; a {&#13;
+  color: #ffffff !important;&#13;
+}&#13;
+.dropdown-menu &gt; li &gt; a:hover,&#13;
+.dropdown-menu &gt; li &gt; a:focus {&#13;
+  background-color: #302b63; /* Lighter purple on hover */&#13;
+  color: #ffffff !important;&#13;
+}&#13;
+&#13;
+/* --- ORIGINAL WIDGET CSS --- */&#13;
+&#13;
+.navbar-fade {&#13;
+  opacity: 0.4;&#13;
+}&#13;
+&#13;
+.navbar-inverse .navbar-toggle {&#13;
+  border-color: transparent; /* Changed to transparent to remove the box around hamburger */&#13;
+}&#13;
+&#13;
+header[role="banner"],&#13;
+.nav &gt; li &gt; a {&#13;
+  max-height: 60px;&#13;
+}&#13;
+&#13;
+.nav &gt; li &gt; a span.fa{&#13;
+  margin-left: 0.2rem;&#13;
+}&#13;
+&#13;
+.responsive-tablet {&#13;
+  .nav &gt; li &gt; a {&#13;
+    padding-right: 0.5rem;&#13;
+    padding-left: 0.5rem;&#13;
+  }&#13;
+}&#13;
+&#13;
+.navbar-brand {&#13;
+  max-height: 60px;&#13;
+  padding: 0;&#13;
+  padding-bottom: 0.5rem;&#13;
+}&#13;
+&#13;
+.navbar-brand img, .navbar-brand span {&#13;
+  margin-left: $sp-logo-margin-x;&#13;
+  margin-right: $sp-logo-margin-x;&#13;
+  margin-top: $sp-logo-margin-y;&#13;
+  margin-bottom: $sp-logo-margin-y;&#13;
+  display: block;&#13;
+  max-height: $sp-logo-max-height;&#13;
+  max-width: $sp-logo-max-width;&#13;
+  position: relative;&#13;
+  top: 50%;&#13;
+  -webkit-transform: translateY(-50%);&#13;
+  -ms-transform: translateY(-50%);&#13;
+  transform: translateY(-50%);&#13;
+  overflow: hidden;&#13;
+  width: calc(100% - 3rem);&#13;
+}&#13;
+&#13;
+.responsive-tablet {&#13;
+  .navbar-brand img, .navbar-brand span {&#13;
+    max-width: $sp-logo-mobile-max-width;&#13;
+  }&#13;
+}&#13;
+&#13;
+.breadcrumb-container {&#13;
+  background-color: transparent; /* Made transparent */&#13;
+}&#13;
+&#13;
+/* for mobile app */&#13;
+.navbar-inverse.is-native {&#13;
+  background-color: #405060;&#13;
+}&#13;
+&#13;
+nav {&#13;
+  margin-bottom: 0px;&#13;
+  border-radius: 0px;&#13;
+&#13;
+ .toggle-dropdown {&#13;
+    height: 60px;&#13;
+  }&#13;
+&#13;
+}&#13;
+&#13;
+.navbar-right {&#13;
+  padding-right: 0px;&#13;
+  padding-left: 7px;&#13;
+}&#13;
+&#13;
+.navbar-nav {&#13;
+margin: 0px;&#13;
+}&#13;
+&#13;
+.scrollable-dropdown {&#13;
+  max-height: 80vh;&#13;
+  overflow: auto;&#13;
+  height: auto;&#13;
+}&#13;
+&#13;
+.is-native {&#13;
+ .scrollable-dropdown {&#13;
+  max-height: 100vh;&#13;
+  overflow: scroll;&#13;
+  height: auto;&#13;
+	}&#13;
+}&#13;
+&#13;
+.responsive-desktop {&#13;
+  .navbar-right {&#13;
+    display: flex !important;&#13;
+    height: auto !important;&#13;
+  }&#13;
+}&#13;
+&#13;
+.responsive-tablet {&#13;
+  .navbar-toggle {&#13;
+    display: block;&#13;
+  }&#13;
+  .navbar-header {&#13;
+    float: none;&#13;
+  }&#13;
+  .navbar-left,.navbar-right {&#13;
+    float: none !important;&#13;
+  }&#13;
+  .navbar-nav {&#13;
+    float: none !important;&#13;
+  }&#13;
+  .navbar-nav &gt; li {&#13;
+    float: none;&#13;
+  }&#13;
+  .navbar-nav &gt; li &gt; a {&#13;
+    padding-top: 1rem ;&#13;
+    padding-bottom: 1rem;&#13;
+  }&#13;
+}&#13;
+&#13;
+@media screen and (-ms-high-contrast: active), (forced-colors: active) {&#13;
+  .navbar-brand,&#13;
+  .navbar-nav &gt;li &gt;a,&#13;
+  .skip-link,&#13;
+  .btn.btn-primary,&#13;
+  .btn.btn-danger,&#13;
+  .navbar-inverse .navbar-toggle {&#13;
+    &amp;:focus {&#13;
+      outline-offset: -4px !important;&#13;
+    }&#13;
+  }&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element) {
+	var KEY = {
+		TAB: 9,
+		ESC: 27
+	};
+	
+	function isMDScreenSize() {
+		return window.matchMedia('(max-width: 992px)').matches;
+	}
+	
+	var navbarContainer = $('#sp-nav-bar');
+	navbarContainer.on('shown.bs.collapse', function () {
+		$('a:visible', navbarContainer).first().focus();
+	});
+	
+	// Additional mobile-specific ESC key handling for Stock Header
+	$(element).on('keyup', function(event) {
+		if (event.which == KEY.ESC) {
+			var mdScreenSize = isMDScreenSize();
+			if (mdScreenSize && $('.navbar-right').attr("aria-expanded")) {
+				closeMobileMenu();
+				
+				if ($(event.target).parents(".navbar-right").length > 0)
+					$('.navbar-toggle').focus();
+			}
+		}
+	});
+
+	$(element).on('click.nav','.navbar-collapse.in',function(e) {
+		var target = $(e.target);
+		if (target.is('a')) {
+			if (target.hasClass('sp-menu-has-items'))
+				return; // menu item has a submenu, so just toggle it
+
+			// collapse mobile nav if clicked an anchor
+			$(this).removeClass('in').addClass('collapse');
+			return;
+		}
+
+		if (target.parent().hasClass("toggle-dropdown")) {
+			// collapse mobile nav if parent has toggle-dropdown class
+			$(this).removeClass('in').addClass('collapse');
+			return;
+		}
+
+		// if neither target nor parent is an anchor, do nothing
+		if (!target.parent().is('a'))
+			return;
+
+		// collapse mobile nav if target is part of a submenu
+		if (target.parents("ul.dropdown-menu").length > 0)
+			$(this).removeClass('in').addClass('collapse');
+	});
+
+	// clicking outside the mobile menu should close the mobile menu
+	$(document).on('click', function(e) {
+		var target = $(e.target);
+		if (target.parents('.navbar-right').length == 0) {
+			closeMobileMenu();
+		}
+	});
+	
+	// Close the mobile menu when focus goes out of the menu
+	$('.navbar-right').on('keydown', 'a', function(event) {
+		if (($(this).is($('.navbar-right a').last()) && event.which == KEY.TAB && !event.shiftKey) || ($(this).is($('.navbar-right a').first()) && event.which == KEY.TAB && event.shiftKey)) {
+			closeMobileMenu();
+			setTimeout(function () {
+				window.scrollBy(0,-200);
+			});
+		}
+	});
+	
+	function closeMobileMenu() {
+		$('.navbar-right').collapse('hide');
+	}
+}]]></link>
+        <name>AIVA Header </name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[// Defines the support queue ID that will be linked to by the Live Chat link in header
+data.connect_support_queue_id = $sp.getValue('sp_chat_queue');
+data.login_page = $sp.getValue('login_page');
+data.profileBtnMsg = gs.getMessage("User options");
+data.toggleMsg = gs.getMessage("Toggle navigation");
+var menu = $sp.getValue("sp_rectangle_menu");
+data.menu = $sp.getWidgetFromInstance(menu);
+//data.langSelector = pm.isActive('com.glide.i18n')? $sp.getWidget('sp-lang-selector') : "";
+if (data.menu && data.menu.data) {
+	data.menu.data.replace = true;
+	// Hide login if menu already has link to login
+	data.hasLogin = false;
+	if (data.menu.data.menu.items) {
+		data.hasMenuItems = data.menu.data.menu.items.length > 0;
+		for(var i in data.menu.data.menu.items) {
+			var item = data.menu.data.menu.items[i];
+			if (item.type == 'page' && item.sp_page == data.login_page)
+				data.hasLogin = true;
+		}
+	}
+}
+
+data.loginWidget = $sp.getWidgetFromInstance('login-modal');
+data.lightfallBgWidget = $sp.getWidget('lightfall-background');]]></script>
+        <servicenow>false</servicenow>
+        <static>false</static>
+        <sys_class_name>sp_header_footer</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-03 22:50:39</sys_created_on>
+        <sys_id>1663d7e693f103100b617d532bba10da</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>AIVA Header </sys_name>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>sp_header_footer_1663d7e693f103100b617d532bba10da</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-03 23:37:40</sys_updated_on>
+        <template><![CDATA[<div>
+  <sp-widget widget="::data.lightfallBgWidget"></sp-widget>
+  <nav id="responsiveNav" class="navbar-inverse" ng-class="::{'navbar':!isViewNative, 'is-native': isViewNative}"
+       role="navigation" aria-label="${Primary}">
+    <div ng-show="::!isViewNative" class="navbar-header">
+<a class="navbar-brand" ng-if="::!portal.logo" href="?id={{::portal.homepage_dv}}">
+  <svg class="ai-sparkle-bg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="aiGradient" x1="0%" y1="20%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#3b82f6" /> <stop offset="100%" stop-color="#a855f7" /> </linearGradient>
+    </defs>
+    <path d="M14 4 C 14 11, 11 14, 4 14 C 11 14, 14 17, 14 24 C 14 17, 17 14, 24 14 C 17 14, 14 11, 14 4 Z" fill="url(#aiGradient)"/>
+    <path d="M26 4 C 26 7, 24.5 8.5, 21.5 8.5 C 24.5 8.5, 26 10, 26 13 C 26 10, 27.5 8.5, 30.5 8.5 C 27.5 8.5, 26 7, 26 4 Z" fill="url(#aiGradient)"/>
+  </svg>
+  <span ng-bind="portal.title"></span>
+</a>
+      <a class="navbar-brand navbar-brand-logo" ng-if="::portal.logo" ng-href="?id={{::portal.homepage_dv}}" ng-click="collapse()" aria-label="{{::logoText}}">
+        <img ng-src="{{::portal.logo}}" title="{{::portal.title}}" alt="{{::portal.logo_alt_text || portal.title}} ${Logo}" />
+      </a>
+      <button ng-if="data.hasMenuItems || (!user.logged_in && page.id != portal.login_page_dv && !data.hasLogin) || user.logged_in" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-placement="bottom" data-toggle-second="tooltip" data-original-title="{{::data.toggleMsg}}" data-target="#sp-nav-bar" aria-haspopup="menu">
+        <span class="sr-only">${Toggle navigation}</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div sp-navbar-toggle="" class="collapse navbar-right" id="sp-nav-bar" role="navigation">
+      <!-- Include The Menu -->
+      <sp-widget widget="::data.menu"></sp-widget>
+	  <!-- Language Selector Menu -->
+      <sp-widget widget="::data.langSelector"></sp-widget>
+      <ul ng-if="(!user.logged_in && page.id != portal.login_page_dv && !data.hasLogin)" class="nav navbar-nav" role="presentation">
+        <li role="presentation"><a href ng-click="::openLogin()">${Login}</a></li>
+      </ul>
+      <ul ng-if="user.logged_in" class="nav navbar-nav">
+        <!-- chat, avatar, and logout -->
+        <li ng-if="::(data.connect_support_queue_id && !isAgentChatConfigured)"><a href ng-click="openPopUp()" role="button">${Live Chat}</a></li>
+        <li ng-if="showAvatar" class="hidden-xs hidden-sm dropdown">
+          <a href class="toggle-dropdown" data-toggle="dropdown" aria-expanded="false" aria-label="{{::data.profileBtnMsg}}: {{::user.name}}" id="profile-dropdown"  role="button" aria-haspopup="true">
+            <span class="navbar-avatar" aria-hidden="true"><sn-avatar class="avatar-small-medium" primary="avatarProfile" /></span>
+            <span class="visible-lg-inline">{{::user.name}}</span>
+          </a>
+          <ul class="dropdown-menu" aria-label="{{::data.profileBtnMsg}}">
+            <li><a tabindex="-1" ng-href="?id=user_profile&sys_id={{::user.sys_id}}">${Profile}</a></li>
+            <li ng-if="::!(isViewNative || isViewNativeTablet)"><a tabindex="-1" href="{{::portal.logoutUrl}}">${Logout}</a></li>
+          </ul>
+        </li>
+        <li ng-if="showSMAvatar" class="visible-xs-block visible-sm-block"><a ng-href="?id=user_profile&sys_id={{::user.sys_id}}" ng-click="collapse()">
+          <span class="navbar-avatar"><sn-avatar class="avatar-small-medium" primary="avatarProfile" /></span>{{::user.name}}</a>
+        </li>
+        <li ng-if="::!(isViewNative || isViewNativeTablet)" class="visible-xs-block visible-sm-block"><a ng-href="{{::portal.logoutUrl}}" ng-click="collapse()">${Logout}</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>]]></template>
+    </sp_header_footer>
+</record_update>

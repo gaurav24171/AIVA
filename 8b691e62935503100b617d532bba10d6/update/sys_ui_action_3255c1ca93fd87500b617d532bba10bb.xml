@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>generate_ai_assessment</action_name>
+        <active>true</active>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+    // 1. Show initial loading message
+    g_form.addInfoMessage('⏳ AI is analyzing the process... Please wait.');
+
+    // 2. Call the Assessment Script Include asynchronously
+    var ga = new GlideAjax('x_168647_aiva.AIVAGenAIAssistant');
+    ga.addParam('sysparm_name', 'generateAssessmentAjax');
+    ga.addParam('sysparm_record_id', g_form.getUniqueValue());
+    
+    // 3. Wait for the Assessment response
+    ga.getXMLAnswer(function(response) {
+        if (response && !response.startsWith("Error") && !response.startsWith("Exception")) {
+            g_form.addInfoMessage('✨ AI Pre-Assessment generated! Now building architecture diagrams... ⏳');
+            
+            // 4. Trigger Secondary Call for Architecture Diagrams
+            var gaArch = new GlideAjax('x_168647_aiva.AIVAGenAIAssistant');
+            gaArch.addParam('sysparm_name', 'generateArchitectureComparison');
+            gaArch.addParam('sysparm_record_id', g_form.getUniqueValue());
+            
+            gaArch.getXMLAnswer(function(archResponse) {
+                if (archResponse && !archResponse.startsWith("Error") && !archResponse.startsWith("Exception")) {
+                    g_form.addInfoMessage('✨ Architecture Diagrams generated successfully!');
+                } else {
+                    g_form.addErrorMessage('Failed to generate architecture diagrams: ' + archResponse);
+                }
+            });
+
+        } else {
+            g_form.addErrorMessage('Failed to generate assessment: ' + response);
+        }
+    });
+}]]></client_script_v2>
+        <comments/>
+        <condition/>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_icon/>
+        <form_button_v2>true</form_button_v2>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style>primary-ai</form_style>
+        <format_for_configurable_workspace>true</format_for_configurable_workspace>
+        <hint/>
+        <isolate_script>false</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_button_icon/>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>Generate AI Assessment</name>
+        <onclick>runAIAssessment()</onclick>
+        <order>100</order>
+        <script><![CDATA[function runAIAssessment() {
+    // 1. Show initial loading message
+    g_form.addInfoMessage('⏳ AI is analyzing the process... Please wait.');
+
+    // 2. Call the Assessment Script Include asynchronously
+    var ga = new GlideAjax('AIVAGenAIAssistant');
+    ga.addParam('sysparm_name', 'generateAssessmentAjax');
+    ga.addParam('sysparm_record_id', g_form.getUniqueValue());
+
+    // 3. Wait for the Assessment response
+    ga.getXMLAnswer(function(response) {
+        // Clear the initial message
+        g_form.clearMessages();
+
+        if (response && !response.startsWith("Error") && !response.startsWith("Exception")) {
+            g_form.addInfoMessage('✨ AI Pre-Assessment generated! Now building architecture diagrams... ⏳');
+            
+            // 4. Trigger Secondary Call for Architecture Diagrams
+            var gaArch = new GlideAjax('AIVAGenAIAssistant');
+            gaArch.addParam('sysparm_name', 'generateArchitectureComparison');
+            gaArch.addParam('sysparm_record_id', g_form.getUniqueValue());
+            
+            gaArch.getXMLAnswer(function(archResponse) {
+                g_form.clearMessages(); // Clear the transition message
+                if (archResponse && !archResponse.startsWith("Error") && !archResponse.startsWith("Exception")) {
+                    g_form.addInfoMessage('✨ AI Pre-Assessment and Architecture Diagrams generated successfully!');
+                } else {
+                    g_form.addErrorMessage('Failed to generate architecture diagrams: ' + archResponse);
+                }
+            });
+
+        } else {
+            g_form.addErrorMessage('Failed to generate assessment: ' + response);
+        }
+    });
+}]]></script>
+        <show_form_icon_only>false</show_form_icon_only>
+        <show_insert>false</show_insert>
+        <show_list_icon_only>false</show_list_icon_only>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-07-01 23:14:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3255c1ca93fd87500b617d532bba10bb</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Generate AI Assessment</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AIVA" source="x_168647_aiva">8b691e62935503100b617d532bba10d6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AIVA">8b691e62935503100b617d532bba10d6</sys_scope>
+        <sys_update_name>sys_ui_action_3255c1ca93fd87500b617d532bba10bb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-07-04 11:50:37</sys_updated_on>
+        <table>x_168647_aiva_request</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>
